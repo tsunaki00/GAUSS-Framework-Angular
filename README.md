@@ -62,3 +62,5 @@ GAUSS Frameworkはクライアント処理にAngular、サーバ処理にnestを
     - サーバーサイドとの通信処理
     - ローカルストレージの処理
 
+
+[詳細はこちらから確認ください](https://github.com/tsunaki00/GAUSS-Framework-Angular/blob/master/GAUSS_%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%E9%96%8B%E7%99%BA%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB.pdf)
