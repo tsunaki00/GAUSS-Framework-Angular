@@ -1,0 +1,277 @@
+<div>
+  <app-header></app-header>
+  <app-left-side></app-left-side>
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        GAUSS Framework!
+      </h1>
+    </section>
+    <section class="content">
+      <!-- index 1 -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box">
+            <div class="box-header with-border">
+              <h3 class="box-title">はじめに</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
+                  <i class="fa fa-minus"></i></button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="" data-original-title="Remove">
+                  <i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div>GAUSS FramworkはGAUSS内のWEBシステム開発における共通基盤として活用します。</div>
+              <div class="padding-top">[GAUSS Framworkの内容]</div>
+              <div>
+                <ul>
+                  <li>frontend (Angular6)</li>
+                  <li>backend  (Nest5)</li>
+                </ul>
+                <div class="padding-left small">※RDBMS, NoSQLのどちらも準備してあります。</div>
+              </div>
+              <div class="padding-top">[開発対象者(必須スキル）]</div>
+              <div>
+                <ul>
+                  <li>HTML5</li>
+                  <li>CSS3 (sass)</li>
+                  <li>Javascript（ECMAScript 6～)</li>
+                </ul>
+              </div>
+              <div class="padding-top small">※Framework(フレームワーク)とは？</div>
+              <div class="small">
+                アプリケーションソフトを開発する際によく必要をされる汎用的な機能をまとめて提供し、アプリケーションの土台として機能するソフトウェアのこと。<br />
+                元々は枠組み、下部構想、構造、組織という意味の英単となる。<br />
+                フレームワークはアプリケーションのひな形であり、これを開発に利用することで、大幅な効率の向上が見込める。
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- index 2 -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box">
+            <div class="box-header with-border">
+              <h3 class="box-title">フレームワークの全体像</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
+                  <i class="fa fa-minus"></i></button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="" data-original-title="Remove">
+                  <i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div>GAUSS Frameworkはクライアント処理にAngular、サーバ処理にnestを基盤として構築します。</div>
+              <hr />
+              <div class="padding-top">[GAUSS Framwork Overview]</div>
+              <div>
+                <img class="screen" src="/assets/images/tutorial/framework_overview.png">
+              </div>
+            </div>
+            <div class="box-footer">
+              <div>関連</div>
+              <div>
+                <a href="https://angular.jp/" target="_blank">Angular</a>,
+                <a href="https://nestjs.com/" target="_blank">nest</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- index 3 -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box">
+            <div class="box-header with-border">
+              <h3 class="box-title">[Frontend]アーキテクチャ</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
+                  <i class="fa fa-minus"></i></button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="" data-original-title="Remove">
+                  <i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div>アーキテクチャーパターンはAngularに準拠した実装(下図参照)となります。</div>
+              <hr />
+              <div class="padding-top">[GAUSS Framwork Frontend Architecture]</div>
+              <div>
+                <img class="screen" src="/assets/images/tutorial/front_architecture.png">
+              </div>
+              <div class="padding-top">[各コンポーネントの主な振る舞い]</div>
+              <div>
+                <ul class="component-list">
+                  <li>
+                    <div class="head">View</div>
+                    <div class="padding-left">
+                      ViewはHTMLや画像などの静的情報の表示およびModelから関連するデータを取得して表示する層となる。<br />
+                      Viewの役割はレイアウトのみ<span class="uptext small">※1</span>を記述。記述方法はHTMLおよびDirective<span class="uptext small">※2</span>を使用する。<br />
+                      <div class="padding-left small"><span class="uptext">※1</span>  インラインでのJavaScript、CSSの実装は禁止</div>
+                      <div class="padding-left small">
+                        <span class="uptext">※2</span>  Directive（ディレクティブ）とは・・・
+                        <div class="padding-left">Angularで以下の3つのDirectiveがある</div>
+                        <ul>
+                          <li>Component　………　テンプレート付きDirective</li>
+                          <li>Structural directives　………　DOM要素を追加、削除してDOMレイアウトを変更するDirective</li>
+                          <li>Attribute directives　………　別のDirectiveの見た目や動作を変更するDirective</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="padding-top">
+                    <div class="head">Controller</div>
+                    <div class="padding-left">
+                      <div>ControllerはScopeをセットアップするための役割で、ユーザのアクションに応じてModelのメソッドを呼ぶなどの処理を行う。</div>
+                      <ul>
+                        <li>Scopeにサービスの呼び出しを結びつける</li>
+                        <li>Modelのイベント通知をScopeに結びつける</li>
+                        <li>Controllerにはプレゼンテーションロジックを記述する。</li>
+                      </ul>
+                      <div class="padding-left small">※ ビジネスロジックはModelに記述し極力シンプルにする </div>
+                    </div>
+                  </li>
+                  <li class="padding-top">
+                    <div class="head">Model</div>
+                    <div class="padding-left">
+                      <div>Modelはプレゼンテーションに関わらない部分すべてがModelで処理を行う。</div>
+                      <ul>
+                        <li>ビジネスロジック</li>
+                        <li>データの入れ物</li>
+                        <li>サーバーサイドとの通信処理</li>
+                        <li>ローカルストレージの処理</li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- index 3 -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box">
+            <div class="box-header with-border">
+              <h3 class="box-title">[Backend]アーキテクチャ</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
+                  <i class="fa fa-minus"></i></button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="" data-original-title="Remove">
+                  <i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div>アーキテクチャーパターンは以下の実装(下図参照)となります。</div>
+              <hr />
+              <div class="padding-top">[GAUSS Framwork Backend Architecture]</div>
+              <div>
+                <img class="screen" src="/assets/images/tutorial/back_architecture.png">
+              </div>
+              <div class="padding-top">[各コンポーネントの主な振る舞い]</div>
+              <div>
+                <ul class="component-list">
+                  <li>
+                    <div class="head">Controller</div>
+                    <div class="padding-left">
+                        Controllerは外部処理からのリクエスト（HTTP Request)の処理を行う。<br />
+                        業務ロジックはServiceで行うため、ControllerではService群を呼び出す仕組みとなる。                      
+                    </div>
+                  </li>
+                  <li class="padding-top">
+                    <div class="head">Model(Service)</div>
+                    <div class="padding-left">
+                      <div>ControllerはScopeをセットアップするための役割で、ユーザのアクションに応じてModelのメソッドを呼ぶなどの処理を行う。</div>
+                      <ul>
+                        <li>ビジネスロジック</li>
+                        <li>データの入れ物</li>
+                        <li>データベース操作</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="padding-top">
+                    <div class="head">その他</div>
+                    <div class="padding-left">
+                      <ul>
+                        <li>
+                          <div>DTO</div>
+                          <div>アプリケーションのサブシステム間（Frontend - Backend）でデータを転送するために作成する。</div>
+                        </li>
+                        <li>
+                          <div>Entity</div>
+                          <div>RDBMSにおけるインターフェースクラス（RDBMSのテーブルと対に作成する）</div>
+                        </li>
+                        <li>
+                          <div>Schema</div>
+                          <div>NoSQLにおけるインターフェースクラス（Documentと対に作成する）</div>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box">
+            <div class="box-header with-border">
+              <h3 class="box-title">ディレクトリ構成</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
+                  <i class="fa fa-minus"></i></button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="" data-original-title="Remove">
+                  <i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div>[全体]</div>
+              <div class="row">
+                <div class="col-md-4">
+                  <img class="screen" src="/assets/images/tutorial/directory_all.png">
+                </div>
+                <div class="col-md-8">
+                  <img class="screen" src="/assets/images/tutorial/directory_all_detail.png">
+                </div>
+              </div>
+              <hr />
+              <div class="padding-top">[Frontend]</div>
+              <div class="row">
+                <div class="col-md-4">
+                  <img class="screen" src="/assets/images/tutorial/directory_front.png">
+                </div>
+                <div class="col-md-8">
+                  <img class="screen" src="/assets/images/tutorial/directory_front_detail.png">
+                </div>
+              </div>
+              <hr />
+              <div class="padding-top">[Backend]</div>
+              <div class="row">
+                <div class="col-md-4">
+                  <img class="screen" src="/assets/images/tutorial/directory_back.png">
+                </div>
+                <div class="col-md-8">
+                  <img class="screen" src="/assets/images/tutorial/directory_back_detail.png">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>      
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box text-center">
+            <div class="get-started">
+              <button mat-raised-button color="primary" (click)="gettingStarted()">Getting Started</button>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </section>
+  </div>
+  <app-footer></app-footer>

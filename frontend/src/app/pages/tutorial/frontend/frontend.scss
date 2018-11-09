@@ -1,0 +1,74 @@
+.index_image {
+  width: 300px;
+}
+table {
+  .head {
+    width: 80px;
+    font-weight: bold;
+  }
+}
+ul.file-tree {
+  list-style: none;
+  -webkit-padding-start: 0px;
+  li {
+    float: left;
+    padding: 5px;
+  }
+}
+ul.file-list {
+  list-style: decimal;
+
+}
+.filename {
+  width: 100%;
+  text-align: right;
+  padding-right: 10px;
+  margin-bottom: -26px;
+  color: #fff;
+}
+.red {
+  color: red;
+}
+.console {
+  font-weight: bold;
+  background-color: black;
+  color: rgb(142, 222, 253);
+  padding: 20px;
+  .comment {
+    font-weight: normal;
+    color: darkgray;
+    font-style: italic;
+  }å
+  .done {
+    color: chartreuse;
+  }
+  .result {
+    font-weight: normal;
+    color: rgb(212, 244, 248);
+  }
+}
+.padding-top {
+  padding-top : 10px;
+  &.padding-top {
+    padding-top : 40px;
+  }
+}
+.padding-left {
+  padding-left : 10px;
+}
+.screen {
+  width: 100%;
+  max-width: 600px;
+}
+.timeline-footer .small {
+  font-size: 80%;
+}
+.front-tutorial {
+  button {
+    width: 80%;
+  }
+}
+
+.delete_index {
+  list-style: decimal;
+}

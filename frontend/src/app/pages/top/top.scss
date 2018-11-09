@@ -1,0 +1,31 @@
+
+.padding-top {
+  padding-top : 10px;
+}
+.padding-left {
+  padding-left : 10px;
+}
+.screen {
+  width: 100%;
+}
+.component-list {
+  .head {
+    color: rgb(209, 90, 90);
+    font-size: 120%;
+    font-weight: bold;
+  }
+  .uptext {
+    vertical-align: top;
+    position: relative;
+    top: -0.1em;
+    color: red;
+  }
+  
+}
+.get-started {
+  padding: 20px;
+  button {
+    width: 80%;
+    font-size: 120%;
+  }
+}

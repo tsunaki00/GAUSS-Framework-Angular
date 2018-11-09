@@ -1,0 +1,43 @@
+table {
+  .head {
+    width: 80px;
+    font-weight: bold;
+  }
+}
+.console {
+  font-weight: bold;
+  background-color: black;
+  color: rgb(142, 222, 253);
+  padding: 20px;
+  .comment {
+    font-weight: normal;
+    color: darkgray;
+    font-style: italic;
+  }å
+  .done {
+    color: chartreuse;
+  }
+  .result {
+    font-weight: normal;
+    color: rgb(212, 244, 248);
+  }
+}
+.timeline {
+  .padding-top {
+    padding-top : 10px;
+  }
+  .padding-left {
+    padding-left : 10px;
+  }
+  .screen {
+    width: 100%;
+  }
+}
+.timeline-footer .small {
+  font-size: 80%;
+}
+.front-tutorial {
+  button {
+    width: 80%;
+  }
+}

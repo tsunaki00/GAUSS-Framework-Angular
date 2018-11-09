@@ -1,0 +1,46 @@
+{
+  "application": {
+    "modules": [
+      "src/modules/*/**/*Module{.ts,.js}"
+    ]
+  },
+  "server": {
+    "port": 3001,
+    "host": "localhost",
+    "secret": "04406c2f-bf13-4e44-986a-ed4c56efdsaf"
+  },
+  "auth": {
+    "expiresIn": 86400,
+    "secret": "2f135192-1338-43ff-b2a0-c5c4jklea671"
+  },
+  "database": {
+
+ "type": "mongodb",
+    "host": "mongodb",
+    "database": "todo",
+    "port": 27017,
+    "synchronize": true,
+    "logging": false,
+    "entities": [
+      "src/entities/**/*{.ts,.js}"
+    ],
+    "subscribers": [
+      "src/subscriber/**/*{.ts,.js}"
+    ],
+    "migrations": [
+      "src/migration/**/*{.ts,.js}"
+    ]  
+  },
+  "crypto": {
+    "salt": "6c6ecab2-6fed-4406-b9bc-9b2a35014600",
+    "iterations": 10000,
+    "keylen": 64,
+    "digest": "sha512"
+  },
+  "swagger": {
+    "title": "GAUSS Framework  API",
+    "description": "GAUSS Framework Example",
+    "version": "1.0",
+    "tag": "GAUSS Framework API"
+  }
+}

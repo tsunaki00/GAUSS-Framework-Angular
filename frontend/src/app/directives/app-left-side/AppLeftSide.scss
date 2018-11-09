@@ -1,0 +1,15 @@
+.main-sidebar, .left-side {
+  position: absolute;
+  top: auto; 
+  left: 0;
+  padding-top: 0px; 
+  min-height: 100%;
+  width: 230px;
+  z-index: 810;
+  transition: width 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+.menu_item > svg {
+  margin-right : 5px;
+}

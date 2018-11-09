@@ -1,0 +1,41 @@
+<app-header></app-header>
+<app-left-side></app-left-side>
+<div class="content-wrapper">
+  <section class="content-header">
+    <h1>ToDo一覧</h1>
+  </section>
+  <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="todo-list box box-primary">
+          <div class="box-header with-border">
+            <i class="ion ion-clipboard"></i>  
+            <h3 class="box-title">ToDo List</h3>
+          </div>
+          <div class="box-body">
+            <div>
+              <div class="input-group input-group-sm">
+                <input [(ngModel)]="message" type="text" class="form-control">
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-info btn-flat" (click)="entry()">ENTRY</button>
+                </span>
+              </div>
+            </div>
+            <ul class="todo-list ui-sortable">
+              <li *ngFor="let todo of todos">
+                <input type="checkbox" value="">
+                <span class="text">{{ todo.message }}</span>
+                <div class="pull-right">
+                  <small class="label label-warning">
+                    <i class="fas fa-clock"></i> {{ todo.date }}
+                  </small>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<app-footer></app-footer>

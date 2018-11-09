@@ -1,0 +1,39 @@
+{
+  "server": {
+    "port": 3001,
+    "host": "aicast-lp-test.gauss-ai.jp",
+    "secret": "04406c2f-bf13-4e44-986a-ed4c56e32f7f"
+  },
+  "auth": {
+    "expiresIn": 86400,
+    "secret": "2f135192-1338-43ff-b2a0-c5c40e47a671"
+  },
+  "database": {
+    "host": "mongodb://mongodb/",
+    "name": "gfp"
+  },
+
+
+  "facebook": {
+    "clientID": "196587480941384",
+    "clientSecret": "6514882c11e2f7303c7db6440785350e",
+    "callbackURL": "https://aicast-lp-test.gauss-ai.jp/rest/auth/facebook/callback"
+  },
+  "twitter": {
+    "consumerKey": "ZUiEQ1rCBvxCB0YBGDbYr2TGt",
+    "consumerSecret": "SziHDw11wvWvXdRqTuYIjsDXux2sA8srrXxKHwMHZBDhgHVRm9",
+    "callbackURL": "https://aicast-lp-test.gauss-ai.jp/rest/auth/twitter/callback"
+  },
+  "crypto": {
+    "salt": "6c6ecab2-6fed-4406-b9bc-9b2a35014600",
+    "iterations": 10000,
+    "keylen": 64,
+    "digest": "sha512"
+  },
+  "swagger": {
+    "title": "AIcast analysis",
+    "description": "競輪予想 API",
+    "version": "1.0",
+    "tag": "AIcast analysis"
+  }
+}
