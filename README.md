@@ -27,7 +27,7 @@ GAUSS Frameworkはクライアント処理にAngular、サーバ処理にnestを
 
 #### [GAUSS Framwork Overview]
 
-画像
+![GAUSS Framwork Overview](https://github.com/tsunaki00/GAUSS-Framework-Angular/blob/master/readme_images/framework_overview.png)
 
 関連
 [Angular](https://angular.jp/), [nest](http://nestjs.com/)
@@ -35,9 +35,7 @@ GAUSS Frameworkはクライアント処理にAngular、サーバ処理にnestを
 
 [GAUSS Framwork Frontend Architecture]
 
- 画像
-
-
+![GAUSS Framwork Frontend Architecture](https://github.com/tsunaki00/GAUSS-Framework-Angular/blob/master/readme_images/front_architecture.png)
 
 #### [各コンポーネントの主な振る舞い]
   - <span style="color: red; ">View</span>  
@@ -63,5 +61,4 @@ GAUSS Frameworkはクライアント処理にAngular、サーバ処理にnestを
     - データの入れ物
     - サーバーサイドとの通信処理
     - ローカルストレージの処理
-
 
