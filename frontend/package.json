@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node build.js;ng serve --disable-host-check --public-host http://lcoalhost:8000",
+    "start": "node build.js;ng serve --disable-host-check --public-host http://localhost:8000",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
