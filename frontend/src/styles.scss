@@ -1,2 +1,90 @@
-/* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import 'prismjs/themes/prism-tomorrow.css';
+@import '~ngx-toastr/toastr';
+body {
+  font-family: Helvetica;
+  // background-color: #F3F7F7;
+  overflow-x : hidden;
+  color: #666;
+  
+
+}
+#container {
+//  max-width: 800px;
+  margin: 0 auto;
+}
+
+input  {
+  background-color: #fff;
+}
+*:focus {
+  outline: none;
+}
+
+
+#toast-container {
+  opacity: .8;
+}
+
+.spinner  {
+  div.circle.animRefreshing:first-child {
+    margin: -50px 0 0 -50px ;
+  }
+}
+.box .overlay > svg, 
+.overlay-wrapper .overlay > svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -15px;
+  margin-top: -15px;
+  color: #000;
+  font-size: 30px;
+}
+
+.shake {
+  animation: shake1 1s ease infinite;
+}
+
+@keyframes shake1 {
+  0% { transform:translateX(0) }
+  5% { transform:translateX(0) }
+  10% { transform:translateX(0) }
+  20% { transform:translateX(-15px) }
+  25% { transform:translateX(0) }
+  30% { transform:translateX(-15px) }
+  50% { transform:translateX(0) }
+  100% { transform:translateX(0) }
+}
+
+
+// データクレンジング
+.handsontable {
+  .grid-icon {
+    height: 16px;
+  }
+  .objective {
+    color: #333;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+}
+.handsontable th, .handsontable td {
+  &.result {
+    background-color: #FFC0CB;
+  }
+  &.changeCell {
+    background-color: #FFFF99;
+  }
+  &.paddingData {
+    background-color: #ffc0cb;
+  }
+  &.default {
+    background-color: #FFF;
+  }
+}
+#hot-display-license-info {
+  color: #F3F7F7 ;
+}
+
+

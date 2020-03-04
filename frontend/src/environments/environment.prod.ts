@@ -1,8 +1,8 @@
 export const environment = {
   production: true,
+  prerenderUrl: '',
   api: {
-    protocol: 'http',
-    host: 'localhost',
-    port: 8000
-  }
+    path : '/rest'
+  },
+
 };

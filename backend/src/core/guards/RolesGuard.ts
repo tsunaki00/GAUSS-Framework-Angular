@@ -9,7 +9,7 @@ import { Reflector } from '@nestjs/core';
  *
  * 履歴：
  * NO 日付         内容
- *  1 2018/08/13  新規作成
+ *  1 2019/06/10  新規作成
  *
  */
 @Injectable()
@@ -21,11 +21,10 @@ export class RolesGuard implements CanActivate {
     if (!roles) {
       return true;
     }
-    // TODO: role check
     const request = context.switchToHttp().getRequest();
     const user = request.user;
     const hasRole = () =>
-      !!user.roles.find(role => !!roles.find(item => item === role));
-    return user && user.roles && hasRole();
+      !!roles.find(item => item == user.role);
+      return user && user.role && hasRole();
   }
 }

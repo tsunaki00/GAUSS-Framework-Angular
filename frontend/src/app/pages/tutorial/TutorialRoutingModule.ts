@@ -1,5 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
 import {FrontendComponent} from './frontend/FrontendComponent';
+import { MainLayoutComponent } from 'src/core/layouts/main/MainLayoutComponent';
 
 /**
  * ルーティング処理クラス
@@ -12,7 +13,8 @@ import {FrontendComponent} from './frontend/FrontendComponent';
  */
 const routes: Routes = [
   {path: 'tutorial',
-    children: [
+  component: MainLayoutComponent,
+  children: [
       { path : '', component : FrontendComponent },
       { path : 'frontend', component : FrontendComponent }
     ]

@@ -1,5 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
 import { ListComponent } from './list/ListComponent';
+import { MainLayoutComponent } from 'src/core/layouts/main/MainLayoutComponent';
 
 /**
  * ToDoルーティング処理クラス
@@ -12,6 +13,7 @@ import { ListComponent } from './list/ListComponent';
  */
 const routes: Routes = [
   {path: 'todo',
+    component: MainLayoutComponent,
     children: [
       { path : '', component : ListComponent },
       { path : 'list', component : ListComponent }

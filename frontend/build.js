@@ -1,76 +1,105 @@
 const fs = require('fs');
 const path = require('path');
 const readline = require('readline');
-const modulePath = '/src/app';
-const corePath = '/app/src/core';
+const modulePath = '/src';
+const corePath = '/src/core';
 const appModule = "modules/AppModule.ts";
 const appComponent = "AppComponent.ts";
 const routingModule = "AppRoutingModule.ts";
 
-(async () => {
-  let modules = [];
-  let listFile = async (dirname) => {
-    let filenames = fs.readdirSync(dirname, 'utf8');    
-    filenames = filenames.filter((f) => f.indexOf('.') != 0 && f != 'node_modules');
-    for (let filename of filenames) {
-      let filepath = `${dirname}/${filename}`;
-      if (fs.statSync(filepath).isDirectory()) {
-        modules.concat(await listFile(filepath));
+let collections = [];
+let listFile = async (dirName) => {
+  let fileNames = fs.readdirSync(dirName, 'utf8');
+  for (var i = 0; i < fileNames.length; i++) {
+    if (fileNames[i] != 'node_modules' && fileNames[i].indexOf('.') != 0 && fileNames[i].indexOf('Abstract') == -1) {
+      let fileName = path.join(dirName, fileNames[i]);
+      if (fs.statSync(fileName).isDirectory()) {
+        await listFile(fileName);
       } else {
-        if (filename.indexOf('Abstract') == -1 && (
-            filename.indexOf('RoutingModule.ts') > -1 || 
-            filename.indexOf('Component.ts') > -1 || 
-            filename.indexOf('Service.ts') > -1)) {
-          if (path.basename(filename) == appComponent) {
-            filepath = '..' + filepath.replace(corePath , '');
+        let fileName = fileNames[i];
+        if (fileName.indexOf('RoutingModule.ts') > -1 ||
+            fileName.indexOf('Component.ts') > -1 || 
+            fileName.indexOf('Service.ts') > -1) {
+          let _dir = dirName.slice(__dirname.length);
+          if (_dir.indexOf('/server') > -1) {
+            continue;
+
+          }
+          if (fileName == appComponent) {
+            _dir = '..' + _dir.replace(corePath , '');
           } else {
-            filepath = '../..' + filepath.replace(modulePath, '');
+            let __path = _dir.replace(modulePath, '');
+            _dir = '../..' + _dir.replace(modulePath, '');
           }
-          let type = 'service';
-          if (filename.indexOf('RoutingModule.ts') > -1) {
-            type = 'routing'
-          } else if(filename.indexOf('DialogComponent.ts') > -1 ) {
-            type = 'dialog'
-          } else if(filename.indexOf('Component.ts') > -1 ) {
-            type = 'component'
+          let className = '';
+          let upCase = true;
+          for (var j = 0; j < fileName.replace('.ts', '').length; j++) {
+            let char = fileName.slice(j, j+1);
+            if (upCase) {
+              char = char.toUpperCase();
+              upCase = false;
+            }
+            upCase = (char == '-' || char == '.');
+            if (!upCase) {
+              className = className + char;
+            }
           }
-          modules.push({
-            "type": type, 
-            "dir" : filepath.replace('/' + path.basename(filename), ''), 
-            "fileName" : path.basename(filename),
-            "className" : path.basename(filename).replace('.ts', '')} );
+          if (fileName.indexOf('RoutingModule.ts') > -1) {
+            collections.push({"type": "routing", "dir" : _dir,  "fileName" : fileName, "className" : className} );
+          } else if (fileName.indexOf('Component.ts') > -1) {
+
+            collections.push({"type": "component", "dir" : _dir,  "fileName" : fileName, "className" : className} );
+            if (fileName.indexOf('DialogComponent.ts') > -1) {
+              collections.push({"type": "dialog", "dir" : _dir,  "fileName" : fileName, "className" : className} );
+            }
+          } else {
+            if (_dir.indexOf('../../core' ) > -1) {
+              _dir = _dir.replace('../../src/core', '..');
+              collections.push({"type": "service", "dir" : _dir, "fileName" : fileName, "className" : className} );
+            } else {
+              collections.push({"type": "service", "dir" : _dir, "fileName" : fileName, "className" : className} );
+            }
+          }
         }
       }
     }
-    modules.concat(modules);
   }
-  await listFile(__dirname);
+}
+// 
+let createAppModule = async () => {
+  await listFile(__dirname, 'utf8');
   let isWrite = true;
   let lines = [];
-  let rs = fs.createReadStream(corePath + "/" + appModule);
+  let rs = fs.createReadStream(__dirname + corePath + "/" + appModule);
   let rl = readline.createInterface(rs, {});  
   rl.on('line', (line) => {
     if (line.indexOf("routing") > -1 ||
-        line.indexOf("declaration") > - 1 ||
-        line.indexOf("service") > -1) {
+        line.indexOf("declarations") > - 1 ||
+        line.indexOf("service") > -1 ||
+        line.indexOf("dialog") > -1) {
       let type = 'service'
       if (line.indexOf("routing") > -1) {
         type = 'routing';
-      } else if (line.indexOf("declaration") > - 1) {
+      } else if (line.indexOf("declarations") > - 1) {
         type = 'component';
+      } else if (line.indexOf("dialog") > - 1) {
+        type = 'dialog';
       }
+
+
       let space = "";
       for (var i = 0; i < line.indexOf('/*'); i++) {
         space = space + " ";
       }
+
       if (line.indexOf("start") > -1) {
         lines.push(line);
         isWrite = false;
         if (line.indexOf("import") > -1) {
-          for (var i = 0; i < modules.length; i++) {
-            let model = modules[i];
+          for (let model of collections) {
             if (model['type'] == type) {
               if (model["fileName"] != routingModule) {
+
                 lines.push(space + "import {" + model['className'] + "} from '" 
                                     + model["dir"] + '/' + model["fileName"].replace('.ts', '') + "';");
               }
@@ -78,8 +107,7 @@ const routingModule = "AppRoutingModule.ts";
           }
         } else {
           let split = "";
-          for (var i = 0; i < modules.length; i++) {
-            let model = modules[i];
+          for (let model of collections) {
             if (model['type'] == type) {
               if (model["fileName"] != routingModule) {
                 lines.push(space + split + model['className']);
@@ -96,8 +124,14 @@ const routingModule = "AppRoutingModule.ts";
       lines.push(line);
     }
   });
-  rl.on('close', (line) => {    
-    fs.writeFile(corePath + "/" + appModule, lines.join('\n'));
+  rl.on('close', (line) => { 
+    fs.writeFileSync(__dirname + corePath + "/" + appModule, lines.join('\n'));
     //createRoutingModule();
   });
+
+}
+(async () => {  
+  await createAppModule();
+//  console.log(collections);
 })();
+

@@ -10,17 +10,18 @@ import * as path from 'path';
  *
  * 履歴：
  * NO 日付         内容
- *  1 2018/08/13  新規作成
+ *  1 2019/06/10  新規作成
  *
  */
 export class DynamicModuleLoader {
-  static forRoot(params = []): DynamicModule {
-    const imports = params.map((name) => {
-      return sync(path.resolve(name));
-    }).reduce((acc, val) => acc.concat(val), [])
-      .filter((x, i, self) => self.indexOf(x) === i);
+  static forRoot(params): DynamicModule {
+    // const imports = params.map((name) => {
+    //   return sync(path.resolve(name));
+    // }).reduce((acc, val) => acc.concat(val), [])
+    //   .filter((x, i, self) => self.indexOf(x) === i);
+    const imports = sync(path.resolve(params[0]));    
+
     const modules = (imports || []).map(async (file) => {
-      // tslint:disable-next-line:whitespace
       const m = await import(file);
       return m[path.basename(file, '.ts')];
     });
@@ -30,3 +31,7 @@ export class DynamicModuleLoader {
     };
   }
 }
+
+
+
+

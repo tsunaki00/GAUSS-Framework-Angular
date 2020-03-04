@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>{{ title }}</h1>
+<div mat-dialog-content>
+  <div class="row">
+    <div class="col-md-12">
+      <div>{{ body }}</div>
+      <small class="caption" *ngIf="caption">{{caption}}</small>
+    </div>
+  </div>   
+</div>
+<div mat-dialog-actions class="mt-10">
+  <div class="button-set" [ngClass]='{"text-center" : isCenter}'>
+    <button *ngFor="let button of buttons" 
+          mat-stroked-button 
+          type="{{button.buttonType}}"
+          [mat-dialog-close]="button.bool" tabindex='-1'>
+      {{ button.title }}
+    </button>
+  </div>
+</div>

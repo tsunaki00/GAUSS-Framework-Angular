@@ -28,7 +28,7 @@ export class ListService extends AbstractService {
    */
   create(message:string) {
     let body = {"message" : message};
-    return this.httpClient.post(`${this.API_URL}/rest/todo`, body);
+    return this.httpClient.post(`${this.API_URL}/todo`, body);
   }
   ////// 追加 ここまで //////
 

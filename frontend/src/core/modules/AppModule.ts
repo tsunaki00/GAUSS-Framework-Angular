@@ -8,6 +8,9 @@ import {HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { NgxMdModule } from 'ngx-md';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgxPageScrollModule} from 'ngx-page-scroll';
+import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
+ 
+
 
 import {JwtInterceptor} from '../interceptors/JwtInterceptor'
 import {ErrorInterceptor} from '../interceptors/ErrorInterceptor'
@@ -19,7 +22,8 @@ import {TutorialRoutingModule} from '../../app/pages/tutorial/TutorialRoutingMod
 
 import {AppRoutingModule} from '../../app/pages/AppRoutingModule';
 
-/*-- declaration import start --*/
+/*-- declarations import start --*/
+import {AppDialogComponent} from '../../app/directives/app-dialog/AppDialogComponent';
 import {AppFooterComponent} from '../../app/directives/app-footer/AppFooterComponent';
 import {AppHeaderComponent} from '../../app/directives/app-header/AppHeaderComponent';
 import {AppLeftSideComponent} from '../../app/directives/app-left-side/AppLeftSideComponent';
@@ -28,17 +32,23 @@ import {ListComponent} from '../../app/pages/todo/list/ListComponent';
 import {TopComponent} from '../../app/pages/top/TopComponent';
 import {FrontendComponent} from '../../app/pages/tutorial/frontend/FrontendComponent';
 import {AppComponent} from '../app/AppComponent';
-/*-- declaration import end --*/
+import {AdminLayoutComponent} from '../../core/layouts/admin/AdminLayoutComponent';
+import {MainLayoutComponent} from '../../core/layouts/main/MainLayoutComponent';
+/*-- declarations import end --*/
 /*-- service import start --*/
+import {AnalyticsService} from '../../app/common/service/AnalyticsService';
 import {AuthService} from '../../app/common/service/AuthService';
-import {UserService} from '../../app/common/service/UserService';
+import {ConstantsService} from '../../app/common/service/ConstantsService';
+import {WindowService} from '../../app/common/service/WindowService';
+import {AppLeftSideService} from '../../app/directives/app-left-side/AppLeftSideService';
 import {ListService} from '../../app/pages/todo/list/ListService';
 /*-- service import end --*/
 import {AngularMaterialModule} from './AngularMaterialModule';
 @NgModule({
   declarations: [
     /*-- declarations start --*/
-    AppFooterComponent
+    AppDialogComponent
+    ,AppFooterComponent
     ,AppHeaderComponent
     ,AppLeftSideComponent
     ,StartComponent
@@ -46,6 +56,8 @@ import {AngularMaterialModule} from './AngularMaterialModule';
     ,TopComponent
     ,FrontendComponent
     ,AppComponent
+    ,AdminLayoutComponent
+    ,MainLayoutComponent
     /*-- declarations end --*/
   ],
   imports: [
@@ -57,6 +69,7 @@ import {AngularMaterialModule} from './AngularMaterialModule';
     ,AppRoutingModule
     ,BrowserAnimationsModule
     ,NgxPageScrollModule
+    ,NgxPageScrollCoreModule
     ,NgxMdModule.forRoot()
     ,AngularMaterialModule,
     
@@ -70,8 +83,11 @@ import {AngularMaterialModule} from './AngularMaterialModule';
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     /*-- service start --*/
-    AuthService
-    ,UserService
+    AnalyticsService
+    ,AuthService
+    ,ConstantsService
+    ,WindowService
+    ,AppLeftSideService
     ,ListService
     /*-- service end --*/
   ],

@@ -1,418 +1,494 @@
-<div>
-  <app-header></app-header>
-  <app-left-side></app-left-side>
-  <div class="content-wrapper" id="top">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        GAUSS Framework Getting Started!!
-      </h1>
-    </section>
-    <section class="content">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="box">
-            <div class="box-header with-border">
-              <h3 class="box-title">INDEX</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
-                  <i class="fa fa-minus"></i></button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="" data-original-title="Remove">
-                  <i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <div class="box-body">
-              <table class="table table-hover table-striped">
-                <tbody>
-                  <tr>
-                    <th class="head">STEP 1</th>
-                    <td>
-                      <a href="#step1" pageScroll [pageScrollInterruptible]="false"
-                        [pageScrollDuration]="500">事前準備</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th class="head">STEP 2</th>
-                    <td>
-                      <a href="#step2" pageScroll [pageScrollInterruptible]="false"
-                      [pageScrollDuration]="500">実行環境の構築(Frontend)</a>
-                      </td>
-                  </tr>
-                  <tr>
-                    <th class="head">STEP 3</th>
-                    <td>
-                      <a href="#step3" pageScroll [pageScrollInterruptible]="false"
-                        [pageScrollDuration]="500">実行環境の構築(Backend)</a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>              
+<div id="top">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      GAUSS Framework Getting Started!!
+    </h1>
+  </section>
+  <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box">
+          <div class="box-header with-border">
+            <h3 class="box-title">INDEX</h3>
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
+                <i class="fa fa-minus"></i></button>
+              <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="" data-original-title="Remove">
+                <i class="fa fa-times"></i></button>
             </div>
           </div>
+          <div class="box-body">
+            <table class="table table-hover table-striped">
+              <tbody>
+                <tr>
+                  <th class="head">STEP 1</th>
+                  <td>
+                    <a href="#step1" pageScroll [pageScrollInterruptible]="false"
+                      [pageScrollDuration]="500">事前準備</a>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="head">STEP 2</th>
+                  <td>
+                    <a href="#step2" pageScroll [pageScrollInterruptible]="false"
+                    [pageScrollDuration]="500">実行環境の構築(Frontend)</a>
+                    </td>
+                </tr>
+                <tr>
+                  <th class="head">STEP 3</th>
+                  <td>
+                    <a href="#step3" pageScroll [pageScrollInterruptible]="false"
+                      [pageScrollDuration]="500">実行環境の構築(Backend)</a>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="head">STEP 4</th>
+                  <td>
+                    <a href="#step4" pageScroll [pageScrollInterruptible]="false"
+                      [pageScrollDuration]="500">STEP 4 実行環境の構築(nginx)</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>              
+          </div>
         </div>
-      </div>    
-      <div class="row">
-        <div class="col-md-12">
-          <ul class="timeline">
-            <li class="time-label" id="step1">
-              <span class="bg-red">
-                STEP 1　事前準備
-              </span>
-            </li>
-            <li>
-              <div class="timeline-item">
-                <h3 class="timeline-header">
-                  ① 必用なミドルウェアのインストール
-                </h3>
-                <div class="timeline-body">
-                  <div>[docker]</div>
-                  <div>1. 以下のサイトからインストール用のパッケージをダウンロードして手順に従ってインストールしてください。</div>
-                  <div class="padding-top padding-left"><a href="https://docs.docker.com/docker-for-mac/install/" target="_blank">https://docs.docker.com/docker-for-mac/install/</a></div>
-
-                  <div class="padding-top">[docker compose]</div>
-                  <div>2. 次にdocker-composeをインストールします。</div>
-                  <div>こちらも以下のサイトを参考にインストールしてください。</div>
+      </div>
+    </div>    
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="timeline">
+          <li class="time-label" id="step1">
+            <span class="bg-red">
+              STEP 1　事前準備
+            </span>
+          </li>
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ① 必用なミドルウェアのインストール
+              </h3>
+              <div class="timeline-body">
+                <div>[nginx]</div>
+                <div>1. 以下のサイトからインストール用のパッケージをダウンロードして手順に従ってインストールしてください。</div>
+                <div class="padding-top padding-left">
+                 <div>[brew]</div>
+                  <a href="https://brew.sh/index_ja" target="_blank">https://brew.sh/index_ja</a>
                   <div class="padding-top padding-left">
-                    <a href="https://docs.docker.com/compose/install/" target="_blank">
-                    https://docs.docker.com/compose/install/
-                    </a>
-                  </div>
-                </div>
-                <div class="timeline-footer small">
-                  <div>
-                    <hr />
-                    <div>関連</div>
-                    <div>
-                      <a href="https://www.docker.com/" target="_blank">docker</a>,
-                      <a href="https://ja.wikipedia.org/wiki/Docker" target="_blank">docker(Wikipedia)</a>,
-                      <a href="https://docs.docker.com/compose/" target="_blank">docker-compose</a>
-                    </div>
-                    <div class="padding-top">-- Memo --</div>
-                    <div>開発をする際は以下の開発エディタを使用することを勧めます。</div>
-                    <div class="padding-left"><a href="https://code.visualstudio.com/">Visual Studio Code</a></div>
-                  </div>    
-                </div>
-              </div>
-            </li>
-            <li class="time-label" id="step2">
-              <span class="bg-red">
-                STEP 2 実行環境の構築(Frontend)
-              </span>
-            </li>
-            <li>
-              <div class="timeline-item">
-                <h3 class="timeline-header">
-                  ① リポジトリからソースの取得
-                </h3>  
-                <div class="timeline-body">
-                  <div>1. terminalで以下のコマンドを実行してプログラムを取得します。</div>
-                  <div class="console">
-                    <span class="comment"># 開発用のworkspaceに移動</span><br />
-                    $ git clone http://192.168.100.152/internal/GAUSS-Framework-NoSQL.git<br />
-                    $ cd GAUSS-Framework-NoSQL
-                  </div>
-                </div>
-                <div class="timeline-footer small">
-                  <div>
-                    <hr />
-                    <div>関連</div>
-                    <div>
-                      <a href="https://git-scm.com/" target="_blank">git</a>,
-                      <a href="https://ja.wikipedia.org/wiki/Git#%E4%BD%9C%E6%A5%AD%E3%81%AE%E6%B5%81%E3%82%8C" target="_blank">git(Wikipedia)</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="timeline-item">
-                <h3 class="timeline-header">
-                  ② 開発用のdockerコンテナの起動
-                </h3>  
-                <div class="timeline-body">
-                  <div>1. terminalで以下のコマンドを実行してdockerを起動します。</div>
-                  <div class="padding-left">※初回の起動は時間がかかります</div>
-                  <div class="console">
-                    $ docker-compose up -d<br />
-                    <span class="result">
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<br />
-                      Starting gaussframeworknosql_frontend_1      ... <span class="done">done</span><br />
-                      Starting gaussframeworknosql_mongodb_1  ... <span class="done">done</span><br />
-                      Starting gaussframeworknosql_mongo-express_1 ... <span class="done">done</span><br />
-                      Starting gaussframeworknosql_backend_1       ... <span class="done">done</span><br />
-                      Starting gaussframeworknosql_nginx_1         ... <span class="done">done</span>
-                    </span>
-                  </div>
-                  <div class="padding-top">2. dockerコマンドでUPしたことの確認を行えます。</div>
-                  <div class="padding-left">※ 起動中のコンテナの一覧が表示されます</div>
-                  <div class="console">
-                    $ docker ps<br />
-                    <span class="result">
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<br />
-                    </span>
-                  </div>
-                </div>
-                <div class="timeline-footer">
-                  <div>
-                    <hr />
-                    <div class="">※※ 停止したい場合はdocker-composeがあるディレクトリで以下のコマンド実行します。</div>
                     <div class="console">
-                      $ docker-compose down<br />
-                      <span class="result">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<br />
-                        Stopping gaussframeworknosql_frontend_1      ... <span class="done">done</span><br />
-                        Stopping gaussframeworknosql_mongodb_1  ... <span class="done">done</span><br />
-                        Stopping gaussframeworknosql_mongo-express_1 ... <span class="done">done</span><br />
-                        Stopping gaussframeworknosql_backend_1       ... <span class="done">done</span><br />
-                        Stopping gaussframeworknosql_nginx_1         ... <span class="done">done</span><br />
-                        Removing gaussframeworknosql_frontend_1      ... <span class="done">done</span><br />
-                        Removing gaussframeworknosql_mongodb_1  ... <span class="done">done</span><br />
-                        Removing gaussframeworknosql_mongo-express_1 ... <span class="done">done</span><br />
-                        Removing gaussframeworknosql_backend_1       ... <span class="done">done</span><br />
-                        Removing gaussframeworknosql_nginx_1         ... <span class="done">done</span>  
-                      </span>
+                      <span class="comment"># brewのインストール</span><br />
+                      $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
                     </div>
                   </div>
+  
+                </div>
+                <div class="padding-top">2. terminalで以下のコマンドを実行してnginxをインストールします。</div>
+                <div class="padding-top padding-left">
+                  <div class="console">
+                    <span class="comment"># ngnxのインストール</span><br />
+                    $ brew install nginx<br />
+                    $ nginx -vnginx <br />
+                    version: nginx/x.xx.x
+                  </div>
+                </div>
+  
+
+                <div class="padding-top ">[docker]</div>
+                <div>1. 以下のサイトからインストール用のパッケージをダウンロードして手順に従ってインストールしてください。</div>
+                <div class="padding-top padding-left"><a href="https://docs.docker.com/docker-for-mac/install/" target="_blank">https://docs.docker.com/docker-for-mac/install/</a></div>
+
+                <div class="padding-top">[docker compose]</div>
+                <div>2. 次にdocker-composeをインストールします。</div>
+                <div>こちらも以下のサイトを参考にインストールしてください。</div>
+                <div class="padding-top padding-left">
+                  <a href="https://docs.docker.com/compose/install/" target="_blank">
+                  https://docs.docker.com/compose/install/
+                  </a>
                 </div>
               </div>
-            </li>              
-            <li>
-              <div class="timeline-item">
-                <h3 class="timeline-header">
-                  ③ フロントエンドの実行で必用なパッケージのインストール
-                </h3>  
-                <div class="timeline-body">
-                  <div>1. terminalで以下のコマンドを実行してdockerにログインします。</div>
-                  <div class="console">
-                    <span class="comment"># forntendにログイン</span><br />
-                    $ docker exec -it gaussframeworknosql_frontend_1 sh<br />
-                    /app # 
-                  </div>
-                  <div class="padding-top">2. コンテナ上で以下のコマンドを実行して必用なパッケージを取得します。</div>
-                  <div class="console">
-                    <span class="comment"># パッケージのインストール(処理に時間がかかります)</span><br />
-                    /app # yarn install<br />
-                    <span class="result">
-                      yarn install v1.6.0<br />
-                      [1/4] Resolving packages...<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<br />
-                      [2/4] Fetching packages...<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<br />
-                      [3/4] Linking dependencies...<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<br />
-                      [4/4] Building fresh packages...<br />
-                      Done in 151.28s.<br />
-                    </span>
-                    /app #
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="timeline-item">
-                <h3 class="timeline-header">
-                  ④ フロントエンドのアプリケーションサーバを起動させます。
-                </h3>  
-                <div class="timeline-body">
-                  <div>1. コンテナ上で以下のコマンドを実行してサーバを起動させます。</div>
-                  <div class="console">
-                    /app # yarn start<br />
-                    <span class="result">
-                      yarn run v1.6.0<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<br />
-                      Date: 2018-07-01T06:33:10.752Z<br />
-                      Hash: 53854f043493da390e81<br />
-                      Time: 43732ms<br />
-                      chunk main main.js, main.js.map (main) 69 kB [initial] [rendered]<br />
-                      chunk polyfills polyfills.js, polyfills.js.map (polyfills) 227 kB [initial] [rendered]<br />
-                      chunk runtime runtime.js, runtime.js.map (runtime) 5.22 kB [entry] [rendered]<br />
-                      chunk scripts scripts.js, scripts.js.map (scripts) 2.4 MB  [rendered]<br />
-                      chunk styles styles.js, styles.js.map (styles) 419 kB [initial] [rendered]<br />
-                      chunk vendor vendor.js, vendor.js.map (vendor) 7.5 MB [initial] [rendered]<br />
-                      ℹ ｢wdm｣: Compiled successfully.
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="timeline-item">
-                <h3 class="timeline-header">
-                  ⑤ ブラウザで起動確認します。
-                </h3>  
-                <div class="timeline-body">
-                  <div>
-                    1. ブラウザ(Google chrome)でアドレスバーに「<a href="http://localhost:4200/" target="_blank">http://localhost:4200/</a>」を入力してアクセスします。
-                  </div>
-                  <div class="padding-left">
-                    <span class="small">
-                      以下の画面が表示さればフロントエンドの環境構築は完了です。
-                    </span>
-                  </div>
-                  <div>
-                    <img class="screen" src="/assets/images/tutorial/front_screen.png">
-                  </div>
-                </div>
-                <div class="timeline-footer">
+              <div class="timeline-footer small">
+                <div>
                   <hr />
-                  <div class="text-center front-tutorial">
-                    <div class="small">-- Frontendの環境構築はここまでです --</div>
-                    <button mat-raised-button color="primary" (click)="frontTutorial()">Frontend tutorial</button>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="time-label" id="step3">
-              <span class="bg-red">
-                STEP 3 実行環境の構築(Backend)
-              </span>
-            </li>
-            <li>
-              <div class="timeline-item">
-                <h3 class="timeline-header">
-                  ① リポジトリからソースの取得<span class="small">(※Frontendの環境構築が完了している方は不要です)</span>
-                </h3>  
-                <div class="timeline-body">
-                  <div>1. terminalで以下のコマンドを実行してプログラムを取得します。</div>
-                  <div class="console">
-                    <span class="comment"># 開発用のworkspaceに移動</span><br />
-                    $ git clone http://192.168.100.152/internal/GAUSS-Framework-NoSQL.git<br />
-                    $ cd GAUSS-Framework-NoSQL
-                  </div>
-                </div>
-              </div>
-            </li>  
-            <li>
-              <div class="timeline-item">
-                <h3 class="timeline-header">
-                  ② 開発用のdockerコンテナの起動 <span class="small">(※Frontendと同じ操作になります)</span>
-                </h3>  
-                <div class="timeline-body">
-                  <div>1. terminalで以下のコマンドを実行してdockerを起動します。</div>
-                  <div class="padding-left">※初回の起動は時間がかかります</div>
-                  <div class="console">
-                    $ docker-compose up -d<br />
-                    <span class="result">
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<br />
-                      Starting gaussframeworknosql_frontend_1      ... <span class="done">done</span><br />
-                      Starting gaussframeworknosql_mongodb_1  ... <span class="done">done</span><br />
-                      Starting gaussframeworknosql_mongo-express_1 ... <span class="done">done</span><br />
-                      Starting gaussframeworknosql_backend_1       ... <span class="done">done</span><br />
-                      Starting gaussframeworknosql_nginx_1         ... <span class="done">done</span>
-                    </span>
-                  </div>
-                  <div class="padding-top">2. dockerコマンドでUPしたことの確認を行えます。</div>
-                  <div class="padding-left">※ 起動中のコンテナの一覧が表示されます</div>
-                  <div class="console">
-                    $ docker ps<br />
-                    <span class="result">
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<br />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="timeline-item">
-                <h3 class="timeline-header">
-                  ③ バックエンドの実行で必用なパッケージのインストール
-                </h3>  
-                <div class="timeline-body">
-                  <div>1. terminalで以下のコマンドを実行してdockerにログインします。</div>
-                  <div class="console">
-                    <span class="comment"># forntendにログイン</span><br />
-                    $ docker exec -it gaussframeworknosql_backend_1 sh<br />
-                    /app # 
-                  </div>
-                  <div class="padding-top">2. コンテナ上で以下のコマンドを実行して必用なパッケージを取得します。</div>
-                  <div class="console">
-                    <span class="comment"># パッケージのインストール(処理に時間がかかります)</span><br />
-                    /app # yarn install<br />
-                    <span class="result">
-                      yarn install v1.6.0<br />
-                      [1/4] Resolving packages...<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<br />
-                      [2/4] Fetching packages...<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<br />
-                      [3/4] Linking dependencies...<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<br />
-                      [4/4] Building fresh packages...<br />
-                      Done in 151.28s.<br />
-                    </span>
-                    /app #
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="timeline-item">
-                <h3 class="timeline-header">
-                  ④ バックエンドのアプリケーションサーバを起動させます。
-                </h3>  
-                <div class="timeline-body">
-                  <div>1. コンテナ上で以下のコマンドを実行してサーバを起動させます。</div>
-                  <div class="console">
-                    /app # yarn watch<br />
-                    <span class="result">
-                      yarn run v1.6.0<br />
-                      $ node build.js;nodemon
-                      (node:71) [DEP0013] DeprecationWarning: Calling an asynchronous function without callback is deprecated.
-                      [nodemon] 1.17.5
-                      [nodemon] to restart at any time, enter `rs`
-                      [nodemon] watching: /app/src/**/* /app/config/**/*
-                      [nodemon] starting `node ./index`
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<br />
-                      ================<br />
-                      PORT : 3001<br />
-                      MODE : undefined<br />
-                      ================<br />
-                      [Nest] 824   - 2018-7-1 10:35:12   [RoutesResolver] ExampleController /example: +42ms<br />
-                      [Nest] 824   - 2018-7-1 10:35:12   [RouterExplorer] Mapped /, GET route +5ms<br />
-                      [Nest] 824   - 2018-7-1 10:35:12   [RouterExplorer] Mapped /, POST route +2ms<br />
-                      [Nest] 824   - 2018-7-1 10:35:12   [NestApplication] Nest application successfully started +3ms
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="timeline-item">
-                <h3 class="timeline-header">
-                  ⑤ ブラウザで起動確認します。
-                </h3>  
-                <div class="timeline-body">
+                  <div>関連</div>
                   <div>
-                    1. ブラウザ(Google chrome)でアドレスバーに「<a href="http://localhost:3001/api/" target="_blank">http://localhost:3001/api/</a>」を入力してアクセスします。
+                    <a href="https://www.docker.com/" target="_blank">docker</a>,
+                    <a href="https://ja.wikipedia.org/wiki/Docker" target="_blank">docker(Wikipedia)</a>,
+                    <a href="https://docs.docker.com/compose/" target="_blank">docker-compose</a>
                   </div>
-                  <div class="padding-left">
-                    <span class="small">
-                      以下の画面が表示さればバックエンドの環境構築は完了です。
-                    </span>
-                  </div>
-                  <div>
-                    <img class="screen" src="/assets/images/tutorial/back_screen.png">
-                  </div>
+                  <div class="padding-top">-- Memo --</div>
+                  <div>開発をする際は以下の開発エディタを使用することを勧めます。</div>
+                  <div class="padding-left"><a href="https://code.visualstudio.com/">Visual Studio Code</a></div>
+                </div>    
+              </div>
+            </div>
+          </li>
+          <li class="time-label" id="step2">
+            <span class="bg-red">
+              STEP 2 実行環境の構築(Frontend)
+            </span>
+          </li>
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ① リポジトリからソースの取得
+              </h3>  
+              <div class="timeline-body">
+                <div>1. terminalで以下のコマンドを実行してプログラムを取得します。</div>
+                <div class="console">
+                  <span class="comment"># 開発用のworkspaceに移動</span><br />
+                  $ git clone https://github.com/tsunaki00/GAUSS-Framework-Angular.git<br />
+                  $ cd GAUSS-Framework-Angular
                 </div>
-                <div class="timeline-footer">
+              </div>
+              <div class="timeline-footer small">
+                <div>
                   <hr />
-                  <div class="text-center front-tutorial">
-                    <div class="small">-- Backendの環境構築はここまでです --</div>
-                    <button mat-raised-button color="primary" (click)="backTutorial()">Backend tutorial</button>
+                  <div>関連</div>
+                  <div>
+                    <a href="https://git-scm.com/" target="_blank">git</a>,
+                    <a href="https://ja.wikipedia.org/wiki/Git#%E4%BD%9C%E6%A5%AD%E3%81%AE%E6%B5%81%E3%82%8C" target="_blank">git(Wikipedia)</a>
                   </div>
                 </div>
               </div>
-            </li>              
-          </ul>
-        </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ② 開発用のdockerコンテナの起動
+              </h3>  
+              <div class="timeline-body">
+                <div>1. terminalで以下のコマンドを実行してdockerを起動します。</div>
+                <div class="padding-left">※初回の起動は時間がかかります</div>
+                <div class="console">
+                  $ docker-compose up -d<br />
+                  <span class="result">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<br />
+                    Starting gaussframeworknosql_mongodb_1  ... <span class="done">done</span><br />
+                    Starting gaussframeworknosql_mongo-express_1 ... <span class="done">done</span><br />
+                  </span>
+                </div>
+                <div class="padding-top">2. dockerコマンドでUPしたことの確認を行えます。</div>
+                <div class="padding-left">※ 起動中のコンテナの一覧が表示されます</div>
+                <div class="console">
+                  $ docker ps<br />
+                  <span class="result">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<br />
+                  </span>
+                </div>
+              </div>
+              <div class="timeline-footer">
+                <div>
+                  <hr />
+                  <div class="">※※ 停止したい場合はdocker-composeがあるディレクトリで以下のコマンド実行します。</div>
+                  <div class="console">
+                    $ docker-compose down<br />
+                    <span class="result">
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<br />
+                      Stopping mongodb  ... <span class="done">done</span><br />
+                      Stopping mongo-express ... <span class="done">done</span><br />
+                      Removing mongodb  ... <span class="done">done</span><br />
+                      Removing mongo-express ... <span class="done">done</span><br />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>              
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ③ フロントエンドの実行で必用なパッケージのインストール
+              </h3>  
+              <div class="timeline-body">
+                <div>1. terminalで以下のコマンドを実行してフロントエンドのディレクトリに移動します。 ([<i>INSTALL_DIR</i>]/frontend])</div>
+                <div class="console">
+                  <span class="comment"># forntendに移動</span><br />
+                  $ cd frontend<br />
+                </div>
+                <div class="padding-top">2. コンテナ上で以下のコマンドを実行して必用なパッケージを取得します。</div>
+                <div class="console">
+                  <span class="comment"># パッケージのインストール(処理に時間がかかります)</span><br />
+                  $ yarn install<br />
+                  <span class="result">
+                    yarn install v1.6.0<br />
+                    [1/4] Resolving packages...<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<br />
+                    [2/4] Fetching packages...<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<br />
+                    [3/4] Linking dependencies...<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<br />
+                    [4/4] Building fresh packages...<br />
+                    Done in 151.28s.<br />
+                  </span>
+                  $
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ④ フロントエンドのアプリケーションサーバを起動させます。
+              </h3>  
+              <div class="timeline-body">
+                <div>1. コンテナ上で以下のコマンドを実行してサーバを起動させます。</div>
+                <div class="console">
+                  $ yarn start<br />
+                  <span class="result">
+                    yarn run v1.6.0<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<br />
+                    Date: 2018-07-01T06:33:10.752Z<br />
+                    Hash: 53854f043493da390e81<br />
+                    Time: 43732ms<br />
+                    chunk main main.js, main.js.map (main) 69 kB [initial] [rendered]<br />
+                    chunk polyfills polyfills.js, polyfills.js.map (polyfills) 227 kB [initial] [rendered]<br />
+                    chunk runtime runtime.js, runtime.js.map (runtime) 5.22 kB [entry] [rendered]<br />
+                    chunk scripts scripts.js, scripts.js.map (scripts) 2.4 MB  [rendered]<br />
+                    chunk styles styles.js, styles.js.map (styles) 419 kB [initial] [rendered]<br />
+                    chunk vendor vendor.js, vendor.js.map (vendor) 7.5 MB [initial] [rendered]<br />
+                    ℹ ｢wdm｣: Compiled successfully.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ⑤ ブラウザで起動確認します。
+              </h3>  
+              <div class="timeline-body">
+                <div>
+                  1. ブラウザ(Google chrome)でアドレスバーに「<a href="http://localhost:4200/" target="_blank">http://localhost:4200/</a>」を入力してアクセスします。
+                </div>
+                <div class="padding-left">
+                  <span class="small">
+                    以下の画面が表示さればフロントエンドの環境構築は完了です。
+                  </span>
+                </div>
+                <div>
+                  <img class="screen" src="/assets/images/tutorial/front_screen.png">
+                </div>
+              </div>
+              <div class="timeline-footer">
+                <hr />
+                <div class="text-center front-tutorial">
+                  <div class="small">-- Frontendの環境構築はここまでです --</div>
+                  <button mat-raised-button color="primary" (click)="frontTutorial()">Tutorial</button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="time-label" id="step3">
+            <span class="bg-red">
+              STEP 3 実行環境の構築(Backend)
+            </span>
+          </li>
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ① リポジトリからソースの取得<span class="small">(※Frontendの環境構築が完了している方は不要です)</span>
+              </h3>  
+              <div class="timeline-body">
+                <div>1. terminalで以下のコマンドを実行してプログラムを取得します。</div>
+                <div class="console">
+                  <span class="comment"># 開発用のworkspaceに移動</span><br />
+                  $ git clone https://github.com/tsunaki00/GAUSS-Framework-Angular.git<br />
+                  $ cd GAUSS-Framework-Angular
+                </div>
+              </div>
+            </div>
+          </li>  
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ② 開発用のdockerコンテナの起動 <span class="small">(※Frontendと同じ操作になります)</span>
+              </h3>  
+              <div class="timeline-body">
+                <div>1. terminalで以下のコマンドを実行してdockerを起動します。</div>
+                <div class="padding-left">※初回の起動は時間がかかります</div>
+                <div class="console">
+                  $ docker-compose up -d<br />
+                  <span class="result">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<br />
+                    Starting mongodb  ... <span class="done">done</span><br />
+                    Starting mongo-express ... <span class="done">done</span><br />
+                  </span>
+                </div>
+                <div class="padding-top">2. dockerコマンドでUPしたことの確認を行えます。</div>
+                <div class="padding-left">※ 起動中のコンテナの一覧が表示されます</div>
+                <div class="console">
+                  $ docker ps<br />
+                  <span class="result">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<br />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ③ バックエンドの実行で必用なパッケージのインストール
+              </h3>  
+              <div class="timeline-body">
+                <div>1. terminalで以下のコマンドを実行してバックエンドのディレクトリに移動します。 ([<i>INSTALL_DIR</i>]/backend])</div>
+                <div class="console">
+                  <span class="comment"># backendのディレクトリに移動</span><br />
+                  $ cd backend<br />
+                </div>
+                <div class="padding-top">2. 以下のコマンドを実行して必用なパッケージを取得します。</div>
+                <div class="console">
+                  <span class="comment"># パッケージのインストール(処理に時間がかかります)</span><br />
+                  $ yarn install<br />
+                  <span class="result">
+                    yarn install v1.6.0<br />
+                    [1/4] Resolving packages...<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<br />
+                    [2/4] Fetching packages...<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<br />
+                    [3/4] Linking dependencies...<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<br />
+                    [4/4] Building fresh packages...<br />
+                    Done in 151.28s.<br />
+                  </span>
+                  $
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ④ バックエンドのアプリケーションサーバを起動させます。
+              </h3>  
+              <div class="timeline-body">
+                <div>1. コンテナ上で以下のコマンドを実行してサーバを起動させます。</div>
+                <div class="console">
+                  /app # yarn start:dev<br />
+                  <span class="result">
+                    yarn run v1.6.0<br />
+                    $ node build.js;nodemon
+                    (node:71) [DEP0013] DeprecationWarning: Calling an asynchronous function without callback is deprecated.
+                    [nodemon] 1.17.5
+                    [nodemon] to restart at any time, enter `rs`
+                    [nodemon] watching: /app/src/**/* /app/config/**/*
+                    [nodemon] starting `node ./index`
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<br />
+                    ================<br />
+                    PORT : 3001<br />
+                    ================<br />
+                    [Nest] 824   - 2018-7-1 10:35:12   [RoutesResolver] ExampleController /example: +42ms<br />
+                    [Nest] 824   - 2018-7-1 10:35:12   [RouterExplorer] Mapped /, GET route +5ms<br />
+                    [Nest] 824   - 2018-7-1 10:35:12   [RouterExplorer] Mapped /, POST route +2ms<br />
+                    [Nest] 824   - 2018-7-1 10:35:12   [NestApplication] Nest application successfully started +3ms
+                  </span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ⑤ ブラウザで起動確認します。
+              </h3>  
+              <div class="timeline-body">
+                <div>
+                  1. ブラウザ(Google chrome)でアドレスバーに「<a href="http://localhost:3000/api/" target="_blank">http://localhost:3000/api/</a>」を入力してアクセスします。
+                </div>
+                <div class="padding-left">
+                  <span class="small">
+                    以下の画面が表示さればバックエンドの環境構築は完了です。
+                  </span>
+                </div>
+                <div>
+                  <img class="screen" src="/assets/images/tutorial/back_screen.png">
+                </div>
+              </div>
+              <div class="timeline-footer">
+                <hr />
+                <div class="text-center front-tutorial">
+                  <div class="small">-- Backendの環境構築はここまでです --</div>
+                  <button mat-raised-button color="primary" (click)="frontTutorial()">Tutorial</button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="time-label" id="step4">
+            <span class="bg-red">
+              STEP 4 実行環境の構築(Backend)
+            </span>
+          </li>
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ① フロントエンドとバックエンドの連結にNginxにリバースプロキシを設定します。
+              </h3>  
+              <div class="timeline-body">
+                <div>1. terminalで以下のコマンドを実行して設定ファイル更新します。 ([<i>INSTALL_DIR</i>]/nginx])</div>
+                <div class="console">
+                  <span class="comment"># 設定ファイルを更新します</span><br />
+                  $ cd ../nginx <br />
+                  $ cp –p /usr/local/etc/nginx/nginx.conf /usr/local/etc/nginx/nginx.conf.org<br />
+                  $ cp –p ./nginx.conf  /usr/local/etc/nginx/nginx.conf <br />
+                </div>
+              </div>
+            </div>
+          </li>  
+
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ②  nginxの設定をリロードします。
+              </h3>  
+              <div class="timeline-body">
+                <div>1. nginxの設定をリロードします。</div>
+                <div class="padding-left">※初回の起動は時間がかかります</div>
+                <div class="console">
+                  $　nginx –s reload　 <br />
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ⑤ ブラウザで起動確認します。
+              </h3>  
+              <div class="timeline-body">
+                <div>
+                  1. ブラウザ(Google chrome)でアドレスバーに「<a href="http://localhost:8001/" target="_blank">http://localhost:8001/</a>」を入力してアクセスします。
+                </div>
+                <div class="padding-left">
+                  <span class="small">
+                    以下の画面が表示されば環境構築は完了です。
+                  </span>
+                </div>
+                <div>
+                  <img class="screen" src="/assets/images/tutorial/nginx_screen.png">
+                </div>
+              </div>
+              <div class="timeline-footer">
+                <hr />
+                <div class="text-center front-tutorial">
+                  <div class="small">-- 環境構築はここまでです --</div>
+                  <button mat-raised-button color="primary" (click)="frontTutorial()">Tutorial</button>
+                </div>
+              </div>
+            </div>
+          </li>
+
+        </ul>
       </div>
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <a href="#top" pageScroll [pageScrollInterruptible]="false"
-                [pageScrollDuration]="1000" >TOPへ</a>
-        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <a href="#top" pageScroll [pageScrollInterruptible]="false"
+              [pageScrollDuration]="1000" >TOPへ</a>
       </div>
-    </section>
-  </div>
-  <app-footer></app-footer>
+    </div>
+  </section>
+</div>

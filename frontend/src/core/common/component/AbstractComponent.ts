@@ -1,4 +1,5 @@
 import { OnInit, AfterViewInit } from '@angular/core';
+import * as $ from 'jquery';
 
 /**
  *  <AbstractComponent>
@@ -9,18 +10,17 @@ import { OnInit, AfterViewInit } from '@angular/core';
  * 履歴：
  * NO 日付        更新者        内容
  */
-export abstract class  AbstractComponent<PropsType> implements OnInit, AfterViewInit  {
-  protected props:PropsType;
-
-  constructor(props?: PropsType) {
-    if (!props) {
-      let _props:any = {};
-      this.props = _props;
-    }
+export abstract class  AbstractComponent implements OnInit, AfterViewInit  {
+  public loading = true;
+  protected invalid = false;
+  
+  constructor() {
   }
   /** Override */
   ngOnInit() {
-    this.componentWillUnmount();
+    $('body').css('width', "100%");
+
+    this.componentWillMount();
     this.render();
   }
   /** Override */
@@ -31,6 +31,11 @@ export abstract class  AbstractComponent<PropsType> implements OnInit, AfterView
   ngDestroy() {
     this.componentWillUnmount();
   }
+  
+    /**
+   * 描画前に実行される
+   */
+  protected componentWillMount() {}
 
   /**
    * 描画前に実行される
@@ -46,5 +51,7 @@ export abstract class  AbstractComponent<PropsType> implements OnInit, AfterView
    * 描画処理が完了したら実行される
    */
   protected componentDidMount() {}
+
+
 }
 

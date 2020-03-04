@@ -1,15 +1,42 @@
 .main-sidebar, .left-side {
+
   position: absolute;
   top: auto; 
   left: 0;
   padding-top: 0px; 
-  min-height: 100%;
   width: 230px;
   z-index: 810;
   transition: width 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, width 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
-}
-.menu_item > svg {
-  margin-right : 5px;
+  // li a svg {
+  //   margin-right : 5px;
+  // }
+  .sidebar-menu li > a > .pull-right-container > .fa-angle-left {
+    width: 8px;
+  } 
+  .menulink {
+    svg {
+      margin-right: 5px;
+    }
+  }
+
+  .iconRotateOpen {
+    animation: rotate1 .5s linear infinite;
+  } 
+  @keyframes rotate1 {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(-90deg); }
+  }
+  .iconRotateClose {
+    animation: rotate2 .5s linear infinite;
+  } 
+  @keyframes rotate2 {
+    0%   { transform: rotate(-90deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+  a {
+    cursor: pointer;
+  }
 }

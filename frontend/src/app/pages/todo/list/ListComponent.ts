@@ -16,7 +16,7 @@ import { AbstractComponent } from 'src/core/common/component/AbstractComponent';
   templateUrl: './List.html',
   styleUrls: ['./List.scss']
 })
-export class ListComponent extends AbstractComponent<any> {
+export class ListComponent extends AbstractComponent {
   message = "";
   todos = [];
   // DI するインスタンスをコンストラクタの引数に書きます

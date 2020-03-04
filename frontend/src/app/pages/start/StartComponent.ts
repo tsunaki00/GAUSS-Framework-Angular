@@ -6,25 +6,27 @@ import { AbstractComponent } from 'src/core/common/component/AbstractComponent';
 
 
 @Component({
-  selector: 'start',
+  selector: 'Start',
   templateUrl: './Start.html',
   styleUrls: ['./Start.scss']
 })
-export class StartComponent extends AbstractComponent<any> {
+export class StartComponent extends AbstractComponent {
   constructor(
     private pageScrollService: PageScrollService,
     @Inject(DOCUMENT) private document: any,
     private router: Router) {
       super();
   }
-  public componentWillUnmount() {
+  public componentWillMount() {
     window.scrollTo(0, 0);
+
   }
+
   public frontTutorial() {
-    this.router.navigateByUrl('/start');
+    this.router.navigate(['tutorial']);
   }
   public backTutorial() {
-    this.router.navigateByUrl('/start');
+    this.router.navigate(['tutorial']);
   }
 
 }

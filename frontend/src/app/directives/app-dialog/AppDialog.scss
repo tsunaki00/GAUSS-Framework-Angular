@@ -1,0 +1,16 @@
+.caption {
+  color: red;
+}
+.mat-dialog-actions .button-set {
+  button:first-child {
+    margin-right: 10px;
+  }
+  margin-left: auto;
+  &.text-center {
+    margin-right: auto;
+  }
+
+}
+* {
+  outline: none;
+}

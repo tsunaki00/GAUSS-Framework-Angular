@@ -1,476 +1,472 @@
-<div>
-  <app-header></app-header>
-  <app-left-side></app-left-side>
-  <div class="content-wrapper" id="top">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        GAUSS Framework tutorial!!
-      </h1>
-    </section>
-    <section class="content">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="box">
-            <div class="box-header with-border">
-              <h3 class="box-title">はじめに</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
-                  <i class="fa fa-minus"></i></button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="" data-original-title="Remove">
-                  <i class="fa fa-times"></i></button>
-              </div>
+<div id="top">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      GAUSS Framework tutorial!!
+    </h1>
+  </section>
+  <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box">
+          <div class="box-header with-border">
+            <h3 class="box-title">はじめに</h3>
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
+                <i class="fa fa-minus"></i></button>
+              <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="" data-original-title="Remove">
+                <i class="fa fa-times"></i></button>
             </div>
-            <div class="box-body">
-              <div>チュートリアルの目標</div>
+          </div>
+          <div class="box-body">
+            <div>チュートリアルの目標</div>
+            <div>
+              <div>簡単なTodoアプリケーションを作成する。</div>
+              <div class="small">画面イメージ</div>
+              <div class="index_image">
+                <img class="screen" src="/assets/images/tutorial/todo_index.png">
+              </div>
+              <div class="padding-top">[機能一覧]</div>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>機能NO</th>
+                    <th>機能名</th>
+                    <th>機能概要</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>0001</td>
+                    <td>Todo一覧表示</td>
+                    <td>登録したTodoの一覧を表示します。</td>
+                  </tr>
+                  <tr>
+                    <td>0002</td>
+                    <td>Todo登録</td>
+                    <td>入力情報でTodoを登録します。</td>
+                  </tr>
+                  <tr>
+                    <td>0003</td>
+                    <td>Todo削除</td>
+                    <td>チェックしたTodoを削除します。(自習)</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="padding-top">[前提条件]</div>
               <div>
-                <div>簡単なTodoアプリケーションを作成する。</div>
-                <div class="small">画面イメージ</div>
-                <div class="index_image">
-                  <img class="screen" src="/assets/images/tutorial/todo_index.png">
-                </div>
-                <div class="padding-top">[機能一覧]</div>
+                <div>・開発ポートは8001番を使用します。</div>
+                <div>・Backendのサーバー開発完了している前提とします。(以下API一覧）</div>
+                <div class="padding-left small red">※※ Backendのサーバが起動している状態で実行してください。</div>
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th>機能NO</th>
-                      <th>機能名</th>
-                      <th>機能概要</th>
+                      <th>No</th>
+                      <th>API</th>
+                      <th>URI</th>
+                      <th>Parameter</th>
+                      <th>Method</th>
+                      <th>description</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>0001</td>
-                      <td>Todo一覧表示</td>
-                      <td>登録したTodoの一覧を表示します。</td>
+                      <td>1</td>
+                      <td>ToDo一覧取得</td>
+                      <td>/rest/todo</td>
+                      <td></td>
+                      <td>GET</td>
+                      <td>ToDoリストを取得する</td>
                     </tr>
                     <tr>
-                      <td>0002</td>
-                      <td>Todo登録</td>
-                      <td>入力情報でTodoを登録します。</td>
-                    </tr>
+                      <td>2</td>
+                      <td>ToDoの登録</td>
+                      <td>/rest/todo</td>
+                      <td>｛ "message" :  "example" ｝</td>
+                      <td>POST</td>
+                      <td>ToDoを登録する</td>
+                    </tr>  
                     <tr>
-                      <td>0003</td>
-                      <td>Todo削除</td>
-                      <td>チェックしたTodoを削除します。(自習)</td>
-                    </tr>
+                      <td>3</td>
+                      <td>ToDoの削除</td>
+                      <td>/rest/todo/:id</td>
+                      <td></td>
+                      <td>DELETE</td>
+                      <td>ToDoを削除する</td>
+                    </tr>  
                   </tbody>
                 </table>
-                <div class="padding-top">[前提条件]</div>
+              </div>
+              <div class="padding-top">[開発に必用なスキル]</div>
+              <ul>
+                <li>HTML5</li>
+                <li>CSS3（sass）</li>
+                <li>Javascript（ECMAScript 6～）</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box">
+          <div class="box-header with-border">
+            <h3 class="box-title">INDEX</h3>
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
+                <i class="fa fa-minus"></i></button>
+              <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="" data-original-title="Remove">
+                <i class="fa fa-times"></i></button>
+            </div>
+          </div>
+          <div class="box-body">
+            <table class="table table-hover table-striped">
+              <tbody>
+                <tr>
+                  <th class="head">STEP 1</th>
+                  <td>
+                    <a href="#step1" pageScroll [pageScrollInterruptible]="false"
+                      [pageScrollDuration]="500">画面Componentの作成</a>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="head">STEP 2</th>
+                  <td>
+                    <a href="#step2" pageScroll [pageScrollInterruptible]="false"
+                    [pageScrollDuration]="500">Routingの設定</a>
+                    </td>
+                </tr>
+                <tr>
+                  <th class="head">STEP 3</th>
+                  <td>
+                    <a href="#step3" pageScroll [pageScrollInterruptible]="false"
+                      [pageScrollDuration]="500">サービス起動</a>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="head">STEP 4</th>
+                  <td>
+                    <a href="#step4" pageScroll [pageScrollInterruptible]="false"
+                      [pageScrollDuration]="500">ToDo登録機能の追加</a>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="head">STEP 5</th>
+                  <td>
+                    <a href="#step5" pageScroll [pageScrollInterruptible]="false"
+                      [pageScrollDuration]="500">サービス確認</a>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="head">STEP 6</th>
+                  <td>
+                    <a href="#step6" pageScroll [pageScrollInterruptible]="false"
+                      [pageScrollDuration]="500">削除機能の追加(自習)</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="timeline">
+          <li class="time-label" id="step1">
+            <span class="bg-red">
+              STEP 1　画面Componentの作成
+            </span>
+          </li>
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ① ToDoシステムのディレクトリ作成
+              </h3>
+              <div class="timeline-body">
+                <div>1.ディレクトリの作成</div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <img class="screen" src="/assets/images/tutorial/filetree.png" />
+                  </div>
+                  <div class="col-md-8">
+                    <div>
+                      今回作成するToDoアプリを作るためのディレクトリとファイルを作成します。
+                    </div>
+                    <div class="padding-top">[作成するディレクトリ]</div>
+                    <div class="padding-left">
+                      <ul class="file-tree">
+                        <li>frontend</li>
+                        <li>></li>
+                        <li>src</li>
+                        <li>></li>
+                        <li>app</li>
+                        <li>></li>
+                        <li>pages</li>
+                        <li>></li>
+                        <li>todo</li>
+                        <li>></li>
+                        <li>list</li>
+                      </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="padding-top">[作成するファイル一覧]</div>
+                    <div>
+                      <ul class="file-list">
+                        <li>List.html</li>
+                        <li>List.scss(css)</li>
+                        <li>ListComponent.ts</li>
+                        <li>ListService.ts</li>
+                      </ul>
+                      <div class="padding-left padding-top padding-top">
+                        上記の準備ができたらルーティングの設定を行います。
+                        <div class="small">(TodoRoutingModule.ts)</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ① テンプレートファイルの作成
+              </h3>  
+              <div class="timeline-body">
+                <div>1. htmlテンプレートファイルを作成します。(List.html)</div>
+                <div class="filename small">fronted/app/todo/list/List.html</div>
+                <ngx-md [path]="'/assets/template/list/List.html'"></ngx-md>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ② スタイルシートファイルの作成
+              </h3>  
+              <div class="timeline-body">
+                <div>1. スタイルシートファイルを作成します。(List.scss)</div>
+                <div class="filename small">fronted/app/todo/list/List.scss</div>
+                <ngx-md [path]="'/assets/template/list/List.css'"></ngx-md>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ③ コンポーネントファイルの作成
+              </h3>  
+              <div class="timeline-body">
+                <div>1. コンポーネントファイルを作成します。(ListComponent.ts)</div>
+                <div class="filename small">fronted/app/todo/list/ListComponent.ts</div>
+                <ngx-md [path]="'/assets/template/list/ListComponent.js'"></ngx-md>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ④ サービスファイルの作成
+              </h3>  
+              <div class="timeline-body">
+                <div>1. サービスファイルを作成します。(ListService.ts)</div>
+                <div class="filename small">fronted/app/todo/list/ListService.ts</div>
+                <ngx-md [path]="'/assets/template/list/ListService.js'"></ngx-md>
+              </div>
+            </div>
+          </li>
+          <li class="time-label" id="step2">
+            <span class="bg-red">
+              STEP 2　Routingの設定
+            </span>
+          </li>
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ① ルーティングファイルの作成
+              </h3>  
+              <div class="timeline-body">
+                <div>1. サービスファイルを作成します。(TodoRoutingModule.ts)</div>
+                <div class="padding-left small red">※ 階層に注意 : fronted/app/todo/</div>
+                <div class="filename small">fronted/app/todo/TodoRoutingModule.ts</div>
+                <ngx-md [path]="'/assets/template/TodoRoutingModule.js'"></ngx-md>
+              </div>
+            </div>
+          </li>
+          <li class="time-label" id="step3">
+            <span class="bg-red">
+              STEP 3 サービス起動(確認)
+            </span>
+          </li>
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ① フロントエンドのアプリケーションサーバを起動させます。
+              </h3>  
+              <div class="timeline-body">
+                <div>1. 以下のコマンドを実行してサーバを起動させます。</div>
+                <div class="console">
+                  <span class="comment"># forntendの起動</span><br />
+                  $ cd frontend<br />
+                  $ yarn start<br />
+                  <span class="result">
+                    yarn run v1.6.0<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<br />
+                    Date: 2018-07-01T06:33:10.752Z<br />
+                    Hash: 53854f043493da390e81<br />
+                    Time: 43732ms<br />
+                    chunk main main.js, main.js.map (main) 69 kB [initial] [rendered]<br />
+                    chunk polyfills polyfills.js, polyfills.js.map (polyfills) 227 kB [initial] [rendered]<br />
+                    chunk runtime runtime.js, runtime.js.map (runtime) 5.22 kB [entry] [rendered]<br />
+                    chunk scripts scripts.js, scripts.js.map (scripts) 2.4 MB  [rendered]<br />
+                    chunk styles styles.js, styles.js.map (styles) 419 kB [initial] [rendered]<br />
+                    chunk vendor vendor.js, vendor.js.map (vendor) 7.5 MB [initial] [rendered]<br />
+                    ℹ ｢wdm｣: Compiled successfully.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ② ブラウザで起動確認します。
+              </h3>  
+              <div class="timeline-body">
                 <div>
-                  <div>・開発ポートは4200番を使用します。</div>
-                  <div>・Backendのサーバー開発完了している前提とします。(以下API一覧）</div>
-                  <div class="padding-left small red">※※ Backendのサーバが起動している状態で実行してください。</div>
-                  <table class="table table-bordered">
-                    <thead>
-                      <tr>
-                        <th>No</th>
-                        <th>API</th>
-                        <th>URI</th>
-                        <th>Parameter</th>
-                        <th>Method</th>
-                        <th>description</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>ToDo一覧取得</td>
-                        <td>/rest/todo</td>
-                        <td></td>
-                        <td>GET</td>
-                        <td>ToDoリストを取得する</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>ToDoの登録</td>
-                        <td>/rest/todo</td>
-                        <td>｛ "message" :  "example" ｝</td>
-                        <td>POST</td>
-                        <td>ToDoを登録する</td>
-                      </tr>  
-                      <tr>
-                        <td>3</td>
-                        <td>ToDoの削除</td>
-                        <td>/rest/todo/:id</td>
-                        <td></td>
-                        <td>DELETE</td>
-                        <td>ToDoを削除する</td>
-                      </tr>  
-                    </tbody>
-                  </table>
+                  1. ブラウザ(Google chrome)でアドレスバーに「<a href="http://localhost:8001/todo" target="_blank">http://localhost:8001/todo</a>」を入力してアクセスします。
                 </div>
-                <div class="padding-top">[開発に必用なスキル]</div>
-                <ul>
-                  <li>HTML5</li>
-                  <li>CSS3（sass）</li>
-                  <li>Javascript（ECMAScript 6～）</li>
-                </ul>
+                <div class="text_center">
+                  <img class="screen" src="/assets/images/tutorial/todo_before.png">
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="box">
-            <div class="box-header with-border">
-              <h3 class="box-title">INDEX</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
-                  <i class="fa fa-minus"></i></button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="" data-original-title="Remove">
-                  <i class="fa fa-times"></i></button>
+          </li>
+          <li class="time-label" id="step4">
+            <span class="bg-red">
+              STEP 4 Todo登録機能の追加
+            </span>
+          </li>
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ① htmlに登録ボタンアクションの登録
+              </h3>
+              <div class="timeline-body">
+                <div>1. htmlテンプレートファイルに登録アクションを追加します。</div>
+                <div class="small">26行目に登録ボタンの追加をします。</div>
+                <div class="filename small">fronted/app/todo/list/List.html</div>
+                <ngx-md [path]="'/assets/template/list/List_add.html'"></ngx-md>
               </div>
             </div>
-            <div class="box-body">
-              <table class="table table-hover table-striped">
-                <tbody>
-                  <tr>
-                    <th class="head">STEP 1</th>
-                    <td>
-                      <a href="#step1" pageScroll [pageScrollInterruptible]="false"
-                        [pageScrollDuration]="500">画面Componentの作成</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th class="head">STEP 2</th>
-                    <td>
-                      <a href="#step2" pageScroll [pageScrollInterruptible]="false"
-                      [pageScrollDuration]="500">Routingの設定</a>
-                      </td>
-                  </tr>
-                  <tr>
-                    <th class="head">STEP 3</th>
-                    <td>
-                      <a href="#step3" pageScroll [pageScrollInterruptible]="false"
-                        [pageScrollDuration]="500">サービス起動</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th class="head">STEP 4</th>
-                    <td>
-                      <a href="#step4" pageScroll [pageScrollInterruptible]="false"
-                        [pageScrollDuration]="500">ToDo登録機能の追加</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th class="head">STEP 5</th>
-                    <td>
-                      <a href="#step5" pageScroll [pageScrollInterruptible]="false"
-                        [pageScrollDuration]="500">サービス確認</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th class="head">STEP 6</th>
-                    <td>
-                      <a href="#step6" pageScroll [pageScrollInterruptible]="false"
-                        [pageScrollDuration]="500">削除機能の追加(自習)</a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table> 
+          </li>
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ② コンポーネントファイルにイベントを登録します。
+              </h3>
+              <div class="timeline-body">
+                <div>1. コンポーネントファイルに登録ボタンのアクション(function)を追加します。</div>
+                <div class="filename small">fronted/app/todo/list/ListComponent.js</div>
+                <ngx-md [path]="'/assets/template/list/ListComponent_add.js'"></ngx-md>
+              </div>
             </div>
-          </div>
-        </div>
+          </li>
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ③ サービスに登録機能を追加します。
+              </h3>
+              <div class="timeline-body">
+                <div>1. サービスファイルに登録機能を追加します。</div>
+                <div class="filename small">fronted/app/todo/list/ListService.js</div>
+                <ngx-md [path]="'/assets/template/list/ListService_add.js'"></ngx-md>
+              </div>
+            </div>
+          </li>
+          <li class="time-label" id="step5">
+            <span class="bg-red">
+              STEP 5 サービス起動(確認)
+            </span>
+          </li>
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ① フロントエンドのアプリケーションサーバを起動させます。
+              </h3>  
+              <div class="timeline-body">
+                <div>1. コンテナにログインし、以下のコマンドを実行してサーバを起動させます。</div>
+                <div class="console">
+                  <span class="comment"># forntendにログイン</span><br />
+                  $ docker exec -it gaussframeworknosql_frontend_1 sh<br />
+                    /app # yarn start<br />
+                  <span class="result">
+                    yarn run v1.6.0<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<br />
+                    Date: 2018-07-01T06:33:10.752Z<br />
+                    Hash: 53854f043493da390e81<br />
+                    Time: 43732ms<br />
+                    chunk main main.js, main.js.map (main) 69 kB [initial] [rendered]<br />
+                    chunk polyfills polyfills.js, polyfills.js.map (polyfills) 227 kB [initial] [rendered]<br />
+                    chunk runtime runtime.js, runtime.js.map (runtime) 5.22 kB [entry] [rendered]<br />
+                    chunk scripts scripts.js, scripts.js.map (scripts) 2.4 MB  [rendered]<br />
+                    chunk styles styles.js, styles.js.map (styles) 419 kB [initial] [rendered]<br />
+                    chunk vendor vendor.js, vendor.js.map (vendor) 7.5 MB [initial] [rendered]<br />
+                    ℹ ｢wdm｣: Compiled successfully.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ② ブラウザで起動確認します。
+              </h3>  
+              <div class="timeline-body">
+                <div>
+                  1. ブラウザ(Google chrome)でアドレスバーに「<a href="http://localhost:8001/todo" target="_blank">http://localhost:8001/todo</a>」を入力してアクセスします。
+                </div>
+                <div class="text_cetnter">
+                  <img class="screen" src="/assets/images/tutorial/todo_after.png">
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="time-label" id="step6">
+            <span class="bg-red">
+              STEP 6 削除機能の追加(自習)
+            </span>
+          </li>
+          <li>
+            <div class="timeline-item">
+              <h3 class="timeline-header">
+                ① 削除機能を追加します。
+              </h3>  
+              <div class="timeline-body">
+                <div>登録機能を参考に削除機能を作成してください。</div>
+                <div>
+                  <ul class="delete_index">
+                    <li>html : チェックボックスの値取得</li>
+                    <li>html : 削除ボタンの追加</li>
+                    <li>コンポーネント : 削除イベントの追加</li>
+                    <li>サービス : 削除機能の追加</li>
+                    <li>画面確認</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>  
+        </ul>
       </div>
-      <div class="row">
-        <div class="col-md-12">
-          <ul class="timeline">
-            <li class="time-label" id="step1">
-              <span class="bg-red">
-                STEP 1　画面Componentの作成
-              </span>
-            </li>
-            <li>
-              <div class="timeline-item">
-                <h3 class="timeline-header">
-                  ① ToDoシステムのディレクトリ作成
-                </h3>
-                <div class="timeline-body">
-                  <div>1.ディレクトリの作成</div>
-                  <div class="row">
-                    <div class="col-md-4">
-                      <img class="screen" src="/assets/images/tutorial/filetree.png" />
-                    </div>
-                    <div class="col-md-8">
-                      <div>
-                        今回作成するToDoアプリを作るためのディレクトリとファイルを作成します。
-                      </div>
-                      <div class="padding-top">[作成するディレクトリ]</div>
-                      <div class="padding-left">
-                        <ul class="file-tree">
-                          <li>frontend</li>
-                          <li>></li>
-                          <li>src</li>
-                          <li>></li>
-                          <li>app</li>
-                          <li>></li>
-                          <li>pages</li>
-                          <li>></li>
-                          <li>todo</li>
-                          <li>></li>
-                          <li>list</li>
-                        </ul>
-                      </div>
-                      <div class="clearfix"></div>
-                      <div class="padding-top">[作成するファイル一覧]</div>
-                      <div>
-                        <ul class="file-list">
-                          <li>List.html</li>
-                          <li>List.scss(css)</li>
-                          <li>ListComponent.ts</li>
-                          <li>ListService.ts</li>
-                        </ul>
-                        <div class="padding-left padding-top padding-top">
-                          上記の準備ができたらルーティングの設定を行います。
-                          <div class="small">(TodoRoutingModule.ts)</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="timeline-item">
-                <h3 class="timeline-header">
-                  ① テンプレートファイルの作成
-                </h3>  
-                <div class="timeline-body">
-                  <div>1. htmlテンプレートファイルを作成します。(List.html)</div>
-                  <div class="filename small">fronted/app/todo/list/List.html</div>
-                  <ngx-md [path]="'/assets/template/list/List.html'"></ngx-md>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="timeline-item">
-                <h3 class="timeline-header">
-                  ② スタイルシートファイルの作成
-                </h3>  
-                <div class="timeline-body">
-                  <div>1. スタイルシートファイルを作成します。(List.scss)</div>
-                  <div class="filename small">fronted/app/todo/list/List.scss</div>
-                  <ngx-md [path]="'/assets/template/list/List.css'"></ngx-md>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="timeline-item">
-                <h3 class="timeline-header">
-                  ③ コンポーネントファイルの作成
-                </h3>  
-                <div class="timeline-body">
-                  <div>1. コンポーネントファイルを作成します。(List.component.ts)</div>
-                  <div class="filename small">fronted/app/todo/list/List.component.ts</div>
-                  <ngx-md [path]="'/assets/template/list/ListComponent.js'"></ngx-md>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="timeline-item">
-                <h3 class="timeline-header">
-                  ④ サービスファイルの作成
-                </h3>  
-                <div class="timeline-body">
-                  <div>1. サービスファイルを作成します。(ListService.ts)</div>
-                  <div class="filename small">fronted/app/todo/list/ListService.ts</div>
-                  <ngx-md [path]="'/assets/template/list/ListService.js'"></ngx-md>
-                </div>
-              </div>
-            </li>
-            <li class="time-label" id="step2">
-              <span class="bg-red">
-                STEP 2　Routingの設定
-              </span>
-            </li>
-            <li>
-              <div class="timeline-item">
-                <h3 class="timeline-header">
-                  ① ルーティングファイルの作成
-                </h3>  
-                <div class="timeline-body">
-                  <div>1. サービスファイルを作成します。(TodoRoutingModule.ts)</div>
-                  <div class="padding-left small red">※ 階層に注意 : fronted/app/todo/</div>
-                  <div class="filename small">fronted/app/todo/TodoRoutingModule.ts</div>
-                  <ngx-md [path]="'/assets/template/TodoRoutingModule.js'"></ngx-md>
-                </div>
-              </div>
-            </li>
-            <li class="time-label" id="step3">
-              <span class="bg-red">
-                STEP 3 サービス起動(確認)
-              </span>
-            </li>
-            <li>
-              <div class="timeline-item">
-                <h3 class="timeline-header">
-                  ① フロントエンドのアプリケーションサーバを起動させます。
-                </h3>  
-                <div class="timeline-body">
-                  <div>1. コンテナにログインし、以下のコマンドを実行してサーバを起動させます。</div>
-                  <div class="console">
-                    <span class="comment"># forntendにログイン</span><br />
-                    $ docker exec -it gaussframeworknosql_frontend_1 sh<br />
-                      /app # yarn start<br />
-                    <span class="result">
-                      yarn run v1.6.0<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<br />
-                      Date: 2018-07-01T06:33:10.752Z<br />
-                      Hash: 53854f043493da390e81<br />
-                      Time: 43732ms<br />
-                      chunk main main.js, main.js.map (main) 69 kB [initial] [rendered]<br />
-                      chunk polyfills polyfills.js, polyfills.js.map (polyfills) 227 kB [initial] [rendered]<br />
-                      chunk runtime runtime.js, runtime.js.map (runtime) 5.22 kB [entry] [rendered]<br />
-                      chunk scripts scripts.js, scripts.js.map (scripts) 2.4 MB  [rendered]<br />
-                      chunk styles styles.js, styles.js.map (styles) 419 kB [initial] [rendered]<br />
-                      chunk vendor vendor.js, vendor.js.map (vendor) 7.5 MB [initial] [rendered]<br />
-                      ℹ ｢wdm｣: Compiled successfully.
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="timeline-item">
-                <h3 class="timeline-header">
-                  ② ブラウザで起動確認します。
-                </h3>  
-                <div class="timeline-body">
-                  <div>
-                    1. ブラウザ(Google chrome)でアドレスバーに「<a href="http://localhost:4200/todo" target="_blank">http://localhost:4200/todo</a>」を入力してアクセスします。
-                  </div>
-                  <div class="text_center">
-                    <img class="screen" src="/assets/images/tutorial/todo_before.png">
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="time-label" id="step4">
-              <span class="bg-red">
-                STEP 4 Todo登録機能の追加
-              </span>
-            </li>
-            <li>
-              <div class="timeline-item">
-                <h3 class="timeline-header">
-                  ① htmlに登録ボタンアクションの登録
-                </h3>
-                <div class="timeline-body">
-                  <div>1. htmlテンプレートファイルに登録アクションを追加します。</div>
-                  <div class="small">26行目に登録ボタンの追加をします。</div>
-                  <div class="filename small">fronted/app/todo/list/List.html</div>
-                  <ngx-md [path]="'/assets/template/list/List_add.html'"></ngx-md>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="timeline-item">
-                <h3 class="timeline-header">
-                  ② コンポーネントファイルにイベントを登録します。
-                </h3>
-                <div class="timeline-body">
-                  <div>1. コンポーネントファイルに登録ボタンのアクション(function)を追加します。</div>
-                  <div class="filename small">fronted/app/todo/list/ListComponent.js</div>
-                  <ngx-md [path]="'/assets/template/list/ListComponent_add.js'"></ngx-md>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="timeline-item">
-                <h3 class="timeline-header">
-                  ③ サービスに登録機能を追加します。
-                </h3>
-                <div class="timeline-body">
-                  <div>1. サービスファイルに登録機能を追加します。</div>
-                  <div class="filename small">fronted/app/todo/list/ListService.js</div>
-                  <ngx-md [path]="'/assets/template/list/ListService_add.js'"></ngx-md>
-                </div>
-              </div>
-            </li>
-            <li class="time-label" id="step5">
-              <span class="bg-red">
-                STEP 5 サービス起動(確認)
-              </span>
-            </li>
-            <li>
-              <div class="timeline-item">
-                <h3 class="timeline-header">
-                  ① フロントエンドのアプリケーションサーバを起動させます。
-                </h3>  
-                <div class="timeline-body">
-                  <div>1. コンテナにログインし、以下のコマンドを実行してサーバを起動させます。</div>
-                  <div class="console">
-                    <span class="comment"># forntendにログイン</span><br />
-                    $ docker exec -it gaussframeworknosql_frontend_1 sh<br />
-                      /app # yarn start<br />
-                    <span class="result">
-                      yarn run v1.6.0<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<br />
-                      Date: 2018-07-01T06:33:10.752Z<br />
-                      Hash: 53854f043493da390e81<br />
-                      Time: 43732ms<br />
-                      chunk main main.js, main.js.map (main) 69 kB [initial] [rendered]<br />
-                      chunk polyfills polyfills.js, polyfills.js.map (polyfills) 227 kB [initial] [rendered]<br />
-                      chunk runtime runtime.js, runtime.js.map (runtime) 5.22 kB [entry] [rendered]<br />
-                      chunk scripts scripts.js, scripts.js.map (scripts) 2.4 MB  [rendered]<br />
-                      chunk styles styles.js, styles.js.map (styles) 419 kB [initial] [rendered]<br />
-                      chunk vendor vendor.js, vendor.js.map (vendor) 7.5 MB [initial] [rendered]<br />
-                      ℹ ｢wdm｣: Compiled successfully.
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="timeline-item">
-                <h3 class="timeline-header">
-                  ② ブラウザで起動確認します。
-                </h3>  
-                <div class="timeline-body">
-                  <div>
-                    1. ブラウザ(Google chrome)でアドレスバーに「<a href="http://localhost:4200/todo" target="_blank">http://localhost:4200/todo</a>」を入力してアクセスします。
-                  </div>
-                  <div class="text_cetnter">
-                    <img class="screen" src="/assets/images/tutorial/todo_after.png">
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="time-label" id="step6">
-              <span class="bg-red">
-                STEP 6 削除機能の追加(自習)
-              </span>
-            </li>
-            <li>
-              <div class="timeline-item">
-                <h3 class="timeline-header">
-                  ① 削除機能を追加します。
-                </h3>  
-                <div class="timeline-body">
-                  <div>登録機能を参考に削除機能を作成してください。</div>
-                  <div>
-                    <ul class="delete_index">
-                      <li>html : チェックボックスの値取得</li>
-                      <li>html : 削除ボタンの追加</li>
-                      <li>コンポーネント : 削除イベントの追加</li>
-                      <li>サービス : 削除機能の追加</li>
-                      <li>画面確認</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </li>  
-          </ul>
-        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <a href="#top" pageScroll [pageScrollInterruptible]="false"
+              [pageScrollDuration]="1000" >TOPへ</a>
       </div>
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <a href="#top" pageScroll [pageScrollInterruptible]="false"
-                [pageScrollDuration]="1000" >TOPへ</a>
-        </div>
-      </div>
-    </section>
-  </div>
-  <app-footer></app-footer>
+    </div>
+  </section>
+</div>

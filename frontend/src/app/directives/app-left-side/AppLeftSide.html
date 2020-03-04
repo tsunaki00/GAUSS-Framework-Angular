@@ -1,21 +1,17 @@
-<aside class="main-sidebar">
-    <section class="sidebar">
-      <ul class="sidebar-menu">
-        <li>
-          <a href="/">
-            <div class="menu_item"><i class="fas fa-home"></i><span>Home</span></div>
-          </a>
-        </li>
-        <li>
-          <a href="/start">
-            <div class="menu_item"><i class="fas fa-robot"></i><span>Getting Started</span></div>
-          </a>
-        </li>  
-        <li>
-          <a href="/tutorial">
-            <div class="menu_item"><i class="fas fa-user-edit"></i><span>Tutorial(Frontend)</span></div>
-          </a>
-        </li>
-      </ul>
-    </section>
-  </aside>
+<aside #side class="main-sidebar" [style.height.px]="scope.height">
+  <section class="sidebar">
+    <ul class="sidebar-menu">
+      <li class="header" *ngIf="scope.menuItems['Information']">Tutorial</li>
+      <li class="treeview"  [ngClass]="styleClass('/')">
+        <a class="menulink" href="/"><i class="fas fa-home"></i> <span>Home</span></a>
+      </li>
+      <li class="treeview"  [ngClass]="styleClass('/start')">
+        <a class="menulink" (click)="routerLink('/start')"><i class="fas fa-robot"></i> <span>Getting Started</span></a>
+      </li>
+      <li class="treeview"  [ngClass]="styleClass('/tutorial')">
+        <a class="menulink" (click)="routerLink('/tutorial')"><i class="fas fa-user-edit"></i> <span>Tutorial(Frontend)</span></a>
+      </li>
+
+    </ul>
+  </section>
+</aside>

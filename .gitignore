@@ -33,6 +33,7 @@ bower_components
 build/Release
 
 # Dependency directories
+dist/
 node_modules/
 jspm_packages/
 
@@ -62,4 +63,3 @@ errorShots
 .data/db/data/
 .ash_history
 .config/
-frontend/src/static/stitch

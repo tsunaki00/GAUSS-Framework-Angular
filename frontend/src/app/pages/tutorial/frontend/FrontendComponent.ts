@@ -21,7 +21,7 @@ import { AbstractComponent } from 'src/core/common/component/AbstractComponent';
   templateUrl: './Frontend.html',
   styleUrls: ['./Frontend.scss']
 })
-export class FrontendComponent extends AbstractComponent<any> {
+export class FrontendComponent extends AbstractComponent {
   constructor(
     private _markdown: NgxMdService,
     private pageScrollService: PageScrollService,
@@ -29,7 +29,7 @@ export class FrontendComponent extends AbstractComponent<any> {
     private router: Router) {
     super();
   }
-  public componentWillUnmount() {
+  public componentWillMount() {
     window.scrollTo(0, 0);
     this._markdown.setMarkedOptions({});
 

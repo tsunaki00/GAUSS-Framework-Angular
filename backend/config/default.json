@@ -5,7 +5,7 @@
     ]
   },
   "server": {
-    "port": 3001,
+    "port": 3000,
     "host": "localhost",
     "secret": "04406c2f-bf13-4e44-986a-ed4c56efdsaf"
   },
@@ -14,22 +14,16 @@
     "secret": "2f135192-1338-43ff-b2a0-c5c4jklea671"
   },
   "database": {
-
- "type": "mongodb",
-    "host": "mongodb",
+   "type": "mongodb",
+    "host": "localhost",
     "database": "todo",
     "port": 27017,
-    "synchronize": true,
+    "synchronize": false,
     "logging": false,
     "entities": [
-      "src/entities/**/*{.ts,.js}"
-    ],
-    "subscribers": [
-      "src/subscriber/**/*{.ts,.js}"
-    ],
-    "migrations": [
-      "src/migration/**/*{.ts,.js}"
-    ]  
+      "dist/entities/**/*{.ts,.js}"
+    ]
+
   },
   "crypto": {
     "salt": "6c6ecab2-6fed-4406-b9bc-9b2a35014600",

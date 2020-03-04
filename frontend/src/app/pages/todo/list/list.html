@@ -1,6 +1,4 @@
-<app-header></app-header>
-<app-left-side></app-left-side>
-<div class="content-wrapper">
+<div>
   <section class="content-header">
     <h1>ToDo一覧</h1>
   </section>
@@ -14,8 +12,9 @@
           </div>
           <div class="box-body">
             <div>
-              <div class="input-group input-group-sm">
+              <div class="input-group input-group">
                 <input [(ngModel)]="message" type="text" class="form-control">
+
                 <span class="input-group-btn">
                   <!--以下のボタンにクリックイベントを追加 -> (click)="entry()" -->
                   <button type="button" class="btn btn-info btn-flat" (click)="entry()">ENTRY</button>
@@ -43,4 +42,3 @@
     </div>
   </section>
 </div>
-<app-footer></app-footer>

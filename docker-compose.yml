@@ -1,42 +1,8 @@
 version: '2'
 services:
-  frontend:
-    build:
-      context: ./docker/frontend
-    volumes:
-      - "./frontend:/app"
-    ports:
-      - "4200:4200"
-    restart: always
-
-  backend:
-    build:
-      context: ./docker/backend
-    volumes:
-      - "./backend:/app"
-    depends_on:
-      - 'mongodb'
-    links:
-      - 'mongodb'
-    ports:
-      - "3001:3001"
-    restart: always
-
-  nginx :
-    build:
-      context: ./docker/nginx
-    depends_on:
-      - frontend
-      - backend
-    links:
-      - frontend
-      - backend
-    ports:
-      - "8000:80"
-    restart: always
-
   mongodb:
     image : mongo:4.0.2
+    container_name: mongodb
     environment :
       - 'MONGO_DATA_DIR=/data/db'
       - 'MONGO_LOG_DIR=/dev/null'
@@ -51,6 +17,7 @@ services:
 
   mongo-express:
     image: mongo-express
+    container_name: mongo-express
     links:
       - 'mongodb'
     ports:
@@ -59,5 +26,5 @@ services:
       - 'ME_CONFIG_OPTIONS_EDITORTHEME=default'
       - 'ME_CONFIG_BASICAUTH_USERNAME=gauss'
       - 'ME_CONFIG_BASICAUTH_PASSWORD=gauss'
-      - 'ME_CONFIG_MONGODB_SERVER=todo'
+      - 'ME_CONFIG_MONGODB_SERVER=mongodb'
     restart: always

@@ -1,4 +1,5 @@
 import { Entity, ObjectIdColumn, ObjectID, Column } from 'typeorm';
+import { Transform } from 'class-transformer';
 /**
  * テーブルエンティティ
  *
@@ -10,10 +11,11 @@ import { Entity, ObjectIdColumn, ObjectID, Column } from 'typeorm';
  *  1 2018/08/13  新規作成
  *
  */
-@Entity()
+@Entity({ name : 'todo' })
 export class TodoEntity {
 
   @ObjectIdColumn()
+  @Transform((id: ObjectID) => id.toHexString(), {toPlainOnly: true})
   id: ObjectID;
 
   @Column()

@@ -13,7 +13,6 @@ import { AbstractService } from 'src/core/common/service/AbstractService';
  */
 @Injectable()
 export class ListService extends AbstractService {
-  API_URL = '/rest/todo';
   constructor(private  httpClient:  HttpClient) {}
 
   // APIから情報を取得します

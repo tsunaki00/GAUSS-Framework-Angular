@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AbstractComponent } from '../common/component/AbstractComponent';
+import { AnalyticsService } from '../../app/common/service/AnalyticsService';
 
 @Component({
-  selector: 'app-root',
+  selector: 'gs-root',
   templateUrl: './App.html',
-  styleUrls: ['./App.sass']
+  styleUrls: ['./App.scss']
 })
-export class AppComponent {
-  title = 'app';
+export class AppComponent extends AbstractComponent {
+  constructor(private analyticsService :  AnalyticsService) {
+    super();
+  }
+  componentDidMount() {
+    this.analyticsService.trackPageViews();
+  }
 }
