@@ -60,6 +60,6 @@ typings/
 
 # WebdriverIO files
 errorShots
-.data/db/data/
+.data/mongodb
 .ash_history
 .config/

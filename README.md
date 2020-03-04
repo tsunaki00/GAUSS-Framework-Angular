@@ -4,8 +4,8 @@
 GAUSS FramworkはGAUSS内のWEBシステム開発における共通基盤として活用します。
 
 #### [GAUSS Framworkの内容]
- - frontend (Angular6)
- - backend (Nest5)  
+ - frontend (Angular8)
+ - backend (Nest6)  
 ※RDBMS, NoSQLのどちらも準備してあります。
 
 
