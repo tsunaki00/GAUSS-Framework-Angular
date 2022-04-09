@@ -40,7 +40,7 @@
     "get-folder-size": "^2.0.1",
     "https": "^1.0.0",
     "jimp": "^0.9.3",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "moment-timezone": "^0.5.27",
     "mongodb": "^3.3.3",
     "nunjucks": "^3.2.0",
