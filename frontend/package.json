@@ -31,7 +31,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
     "jqueryui": "1.11.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "ng-terminal": "^2.3.0",
     "ng2-dragula": "^2.1.1",
     "ng2-file-upload": "^1.4.0",
